@@ -44,7 +44,7 @@ function Meio(){
 return(
   <View style={{width:'100%',flex:1,backgroundColor:'black'}}>
     <View style={{justifyContent:'center',alignItems:'center'}}>
-    <Image source={require('./imagem/Capturarmulharcapa.png')} style={{width:375, height:375}}/>
+    <Image source={require("./imagens/Capturarmulharcapa.PNG")} style={{width:375, height:375}}/>
 
     </View>
   </View>

@@ -1,3 +1,4 @@
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable  } from 'react-native';
 
@@ -66,24 +67,26 @@ const styles = StyleSheet.create({
     
     color: '#32cd32',
     fontSize: 36,
-    fontStyle: 'bold',
+
   },
   txtTech: {
     
     color: 'white',
     fontSize: 36,
-    fontStyle: 'bold',
+
   },
   inputCadastro: {
     backgroundColor: '#000000',
     borderWidth: 2,
     borderRadius: 10,
-    fontSize: 22,
-    width: '90%',
-    padding: 10,
+    fontSize: 20,
+    width: '80%',
+    height: 55,
     margin: 10,
+    paddingLeft: 10,
     color: 'white',
     borderColor: '#32cd32',
+    
   },
   botao: {
     backgroundColor: '#000000',
@@ -138,26 +141,32 @@ const styles = StyleSheet.create({
     return(
   
       <View style={styles.body}>
-        <View style={{width: '100%', paddingLeft: 16, paddingBottom: 20,}}>
+        <View style={{width: '100%',height: '20%' ,paddingLeft: 16, paddingBottom: 20,}}>
            <Text style={{color: '#32cd32', fontSize: 28,}}>Bem Vindo,</Text>
            <Text style={{color: 'white', fontSize: 17, width: '75%',}}>Preencha as informações a seguir para iniciarmos o seu cadastro</Text>
         </View>
 
-        <View style={styles.divInpts}>
+        <View style={{width: '100%', height: '60%', justifyContent: 'center', alignItems: 'center'}}>
         <TextInput style={styles.inputCadastro}
-         placeholder="Nome"       
+         placeholder="Nome" 
+         placeholderTextColor="#FFFFFF"       
          />
         <TextInput style={styles.inputCadastro}
-         placeholder="E-mail"       
+         placeholder="E-mail"      
+         placeholderTextColor="#FFFFFF"  
          />
         <TextInput style={styles.inputCadastro}
-         placeholder="Senha"       
+         placeholder="Senha"     
+         placeholderTextColor="#FFFFFF"   
+         secureTextEntry={true}  
          />
         <TextInput style={styles.inputCadastro}
-         placeholder="Confirmar Senha"       
+         placeholder="Confirmar Senha"   
+         placeholderTextColor="#FFFFFF" 
+         secureTextEntry={true}   
          />       
          </View>
-         {/* <View style={styles.divBotao}>          */}
+         <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
          <Pressable style={styles.botao}>
          <Text style={styles.botaoTexto}>Cadastrar</Text>
          </Pressable>
@@ -165,6 +174,7 @@ const styles = StyleSheet.create({
          <Pressable style={styles.botaoTexto}>
          <Text style={{color: 'white', fontSize: 20,}}>Já tenho cadastro, fazer login</Text>
       </Pressable>
+      </View>
       </View>
 
     )
