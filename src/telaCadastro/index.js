@@ -1,17 +1,19 @@
-// aaaaaaaaaaaaaaa
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Pressable  } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
 
 
 export default function App() {
+
 
   return (
 
     
     <View style={styles.container} >
         <Header />
+       
         <Body />
-        <Footer />
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -39,24 +41,13 @@ const styles = StyleSheet.create({
 
   body: {
     backgroundColor: 'black',
-    // flex: 8,
-    flex: 8,
+
+    flex: 9,
     width: '100%',
     alignItems: 'center',
     // flexDirection: 'row',
     justifyContent: 'center'
   },
-
-  footer: {
-    backgroundColor: 'black',
-    // height: 65,
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    flexDirection: 'row',
-   
-  },
-
   txtHeader: {
     
     color: 'Black',
@@ -91,11 +82,14 @@ const styles = StyleSheet.create({
   botao: {
     backgroundColor: '#000000',
     width: '50%',
-    padding: 10,
+    height: 50,
+    // padding: 10,
     // paddingRight: ,
-    margin: 10,
+    // margin: 10,
+    marginTop: 50,
     borderRadius: 30,
     alignItems: 'center', 
+    justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 3,
   },
@@ -103,6 +97,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
+    
   },
 
   txtBody: {
@@ -141,6 +136,7 @@ const styles = StyleSheet.create({
     return(
   
       <View style={styles.body}>
+        <ScrollView style={{width:'100%'}}>
         <View style={{width: '100%',height: '20%' ,paddingLeft: 16, paddingBottom: 20,}}>
            <Text style={{color: '#32cd32', fontSize: 28,}}>Bem Vindo,</Text>
            <Text style={{color: 'white', fontSize: 17, width: '75%',}}>Preencha as informações a seguir para iniciarmos o seu cadastro</Text>
@@ -165,28 +161,32 @@ const styles = StyleSheet.create({
          placeholderTextColor="#FFFFFF" 
          secureTextEntry={true}   
          />       
+        <TextInput style={styles.inputCadastro}
+         placeholder="Altura"   
+         placeholderTextColor="#FFFFFF" 
+         maxLength={4}
+         keyboardType='numeric'
+         />       
+        <TextInput style={styles.inputCadastro}
+         placeholder="Peso"   
+         placeholderTextColor="#FFFFFF" 
+         maxLength={4}
+         keyboardType='numeric'
+         />       
+
+      
+
          </View>
          <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
          <Pressable style={styles.botao}>
          <Text style={styles.botaoTexto}>Cadastrar</Text>
          </Pressable>
-         {/* </View> */}
-         <Pressable style={styles.botaoTexto}>
-         <Text style={{color: 'white', fontSize: 20,}}>Já tenho cadastro, fazer login</Text>
-      </Pressable>
+         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}}>Já tenho cadastro, fazer login</Text>
+
       </View>
-      </View>
-
-    )
-  }
-
-  function Footer(){
-
-    return(
-
-      <View style={styles.footer}>
-        <Text style={styles.txtFooter}>eqwewq </Text>
+      </ScrollView>
       </View>
 
     )
   }
+
