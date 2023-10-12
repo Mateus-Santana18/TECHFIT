@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Image, TextInput,TouchableOpacity } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
 
@@ -44,20 +44,21 @@ function Meio(){
 return(
   <View style={{width:'100%',flex:1,backgroundColor:'black'}}>
     <View style={{justifyContent:'center',alignItems:'center'}}>
-    <Image source={require('./imagem/Capturarmulharcapa.png')} style={{width:375, height:375}}/>
+    <Image source={require('../../../imagem/mulherInicial.png')} style={{width:375, height:375}}/>
 
     </View>
   </View>
 );
 }
 function Baixo(){
+  const navigation = useNavigation();
 return(
   <View style={{width:'100%',height:125,backgroundColor:'black'}}>
     <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'black',gap:6}}>
-    <TouchableOpacity style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
+    <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
       <Text style={{color:'white',fontSize:20}}>ENTRAR</Text></TouchableOpacity>
    <TouchableOpacity/>
-    <TouchableOpacity style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
+    <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
       <Text style={{color:'white',fontSize:18}}>CADASTRAR</Text></TouchableOpacity>
    <TouchableOpacity/>
   

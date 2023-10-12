@@ -1,11 +1,11 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
+import { useState } from 'react';
 
+import { Picker } from '@react-native-picker/picker';
 
 export default function App() {
-
-
   return (
 
     
@@ -70,11 +70,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     borderWidth: 2,
     borderRadius: 10,
-    fontSize: 20,
+    fontSize: 22,
     width: '80%',
     height: 55,
     margin: 10,
-    paddingLeft: 10,
+    paddingLeft: 17.50,
     color: 'white',
     borderColor: '#32cd32',
     
@@ -112,6 +112,10 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20
   },
+  carros: {
+    fontSize: 25,
+    color: '#FFF',
+  }
  
 });
 
@@ -132,7 +136,15 @@ const styles = StyleSheet.create({
 
     
   function Body(){
-
+    const [biotipoSelecionado, setBiotipoSelecionado] = useState(0);
+    const [selecionarBiotipo, setSelecionarBiotipo] = useState([
+      {key: 1, nome: 'Perder Peso', },
+      {key: 2, nome: 'Manter Saúde'},
+      {key: 3, nome: 'Ganhar massa'},    
+    ])  
+    let biotipo = selecionarBiotipo.map( (v, k) => {
+      return <Picker.Item key={k} value={k} label={v.nome} style={customPickerStyles.pickerItem} />
+    })
     return(
   
       <View style={styles.body}>
@@ -172,9 +184,17 @@ const styles = StyleSheet.create({
          placeholderTextColor="#FFFFFF" 
          maxLength={4}
          keyboardType='numeric'
-         />       
-
-      
+         />      
+         <View style={customPickerStyles.pickerContainer}> 
+        <Picker
+        dropdownIconColor = '#FFF'
+        style={customPickerStyles.inputAndroid}
+        selectedValue={biotipoSelecionado}
+        onValueChange={ (itemValue, itemIndex) => setBiotipoSelecionado(itemValue) }
+        >
+        {biotipo}
+        </Picker>
+        </View>
 
          </View>
          <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
@@ -188,5 +208,29 @@ const styles = StyleSheet.create({
       </View>
 
     )
+    
   }
+
+  const customPickerStyles = StyleSheet.create({
+    pickerContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '80%',
+      height: 55,
+      borderWidth: 2,
+      borderColor: '#32cd32',
+      borderRadius: 10,
+      overflow: 'hidden',
+    },
+    inputAndroid: {
+      width: '100%',
+      color: 'white',
+      
+    },
+    pickerItem: {
+      fontSize: 22,
+      
+    },
+
+  })
 
