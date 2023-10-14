@@ -1,7 +1,7 @@
 import { StatusBar ,} from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity, ScrollView, Pressable,InnerText} from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function App() {
@@ -46,7 +46,7 @@ function Meio(){
  
  <View style={{width:'90%',flex:1,justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
  <View style={{backgroundColor:'#272727',width:'80%',height:'40%',borderRadius:10,paddingLeft:10}}>
- <Image source={require('./imagem/imgdotreino1.png')} style={{width:'30%', height:'100%'}}/>
+ {/* <Image source={require('./imagem/imgdotreino1.png')} style={{width:'30%', height:'100%'}}/> */}
  </View>
  </View>
  
