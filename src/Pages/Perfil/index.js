@@ -33,7 +33,7 @@ function Cima(){
  <Text style={{color:'#00bf63',fontSize:35}}>FIT</Text>
  </View>
  <View style={{height:'50%',width:'50%',backgroundColor:'black'}}>
- {/* <Image source={require('./imagem/perfil.png')} style={{width:'100%', height:'100%'}}/> */}
+ <Image source={require('./imagem/perfil.png')} style={{width:'100%', height:'100%'}}/>
  
  </View>
  </View>
