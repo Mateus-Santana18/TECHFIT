@@ -35,7 +35,7 @@ function Cima(){
       <Text style={{color:'green',fontSize:35}}>FIT</Text>
     </View>
     <View style={{justifyContent:'center',alignItems:'center',paddingTop:55}}>
-      {/* <Image source={require('./imagem/imagemacademia2.0.jpg')} style={{width:'100%', height:200}}/>  */}
+      <Image source={require('../../../imagem/imagemacademia2.0.jpg')} style={{width:'100%', height:200}}/> 
       
     </View>
   </View>
@@ -44,16 +44,22 @@ function Cima(){
 
 }
 function Meio(){
+  const navigation = useNavigation();
   return(
     <View style={{width:'100%',flex:1,justifyContent:'space-evenly',alignItems:'center'}}>
+      <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
       <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
-      {/* <Image source={require('./imagem/imgPerfil.png')} style={{width:120, height:120,borderRadius:10}}/> */}
+      <Image source={require('../../../imagem/imgPerfil.png')} style={{width:120, height:120,borderRadius:10}}/>
       <Text style={{fontSize:55,color:'white'}}>Perfil</Text>  
       </View>
-      <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
-      {/* <Image source={require('./imagem/imgTreino.png')} style={{width:120, height:120,borderRadius:10}}/> */}
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Treinos')}>
+      <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}} >
+      <Image source={require('../../../imagem/imgTreino.png')} style={{width:120, height:120,borderRadius:10}}/>
       <Text style={{fontSize:55,color:'white'}}>Treino</Text>  
+      
       </View>
+      </TouchableOpacity>
     
       
     </View>

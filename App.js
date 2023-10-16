@@ -18,7 +18,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   
   return (
-    // <View style={styles.container}>
+
       <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Inicial" component={Inicial} />
@@ -29,19 +29,11 @@ export default function App() {
         <Stack.Screen name="Treinos" component={Treinos}/>
       </Stack.Navigator>
     </NavigationContainer>
-      // <StatusBar style="auto" />
-    //* </View> */}
+
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'black',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
 
 
 

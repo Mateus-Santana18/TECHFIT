@@ -33,7 +33,7 @@ function Cima(){
  <Text style={{color:'#00bf63',fontSize:35}}>FIT</Text>
  </View>
  <View style={{height:'50%',width:'50%',backgroundColor:'black'}}>
- <Image source={require('./imagem/perfil.png')} style={{width:'100%', height:'100%'}}/>
+ <Image source={require('../../../imagem/perfil.png')} style={{width:'100%', height:'100%'}}/>
  
  </View>
  </View>
@@ -62,11 +62,14 @@ function Meio(){
  <View style={{backgroundColor:'black',width:'100%',height:'10%',alignItems:'flex-start'}}>
  <Text style={{color:'#00bf63',fontSize:32}}>Peso :</Text> 
  </View> 
- <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:'40%',height:'15%',justifyContent:'center',alignItems:'center'}}>
- <Text style={{color:'#ffff',fontSize:35}}>Editar</Text>
+ <View style={{width:'100%',height:'15%',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
+ <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:150,height:50,justifyContent:'center',alignItems:'center'}}>
+ <Text style={{color:'#ffff',fontSize:35}}>Desativar</Text>
  </TouchableOpacity>
- 
- 
+ <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:150,height:50,justifyContent:'center',alignItems:'center'}}>
+ <Text style={{color:'#ffff',fontSize:35}}>Salvar</Text>
+ </TouchableOpacity>
+ </View>
  </View>
  )
 

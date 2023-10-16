@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
 
     
   function Body(){
+    const navigation = useNavigation();
     const [biotipoSelecionado, setBiotipoSelecionado] = useState(0);
     const [selecionarBiotipo, setSelecionarBiotipo] = useState([
       {key: 1, nome: 'Perder Peso', },
@@ -200,10 +201,10 @@ const styles = StyleSheet.create({
 
          </View>
          <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
-         <Pressable style={styles.botao}>
+         <Pressable style={styles.botao} onPress={() => navigation.navigate('Principal')} >
          <Text style={styles.botaoTexto}>Cadastrar</Text>
          </Pressable>
-         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}}>Já tenho cadastro, fazer login</Text>
+         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Login')}>Já tenho cadastro, fazer login</Text>
 
       </View>
       </ScrollView>

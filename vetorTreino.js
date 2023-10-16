@@ -41,7 +41,8 @@ const treinoMassa=[
         nomeExercício: 'Extensão de halteres sob a cabeça',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        tipoMusculo: 'Tríceps'
+        tipoMusculo: 'Tríceps',
+        imagem: ''
     },
 ]
 
