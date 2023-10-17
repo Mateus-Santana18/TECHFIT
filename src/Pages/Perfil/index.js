@@ -2,6 +2,8 @@ import { StatusBar ,} from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity,ScrollView, Pressable,InnerText} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Feather from "@expo/vector-icons/Feather";
 
 
 export default function App() {
@@ -32,9 +34,13 @@ function Cima(){
  <Text style={{color:'white',fontSize:35}}>TECH </Text>
  <Text style={{color:'#00bf63',fontSize:35}}>FIT</Text>
  </View>
- <View style={{height:'50%',width:'50%',backgroundColor:'black'}}>
- <Image source={require('../../../imagem/perfil.png')} style={{width:'100%', height:'100%'}}/>
- 
+ <View style={{height:'50%',width:'50%',backgroundColor:'black',alignItems:'center'}}>
+ {/* <Image source={require('../../../imagem/perfil.png')} style={{width:'100%', height:'100%'}}/> */}
+ <FontAwesome
+        name= 'user'
+        size= {180}
+        color= '#FFF'
+      />
  </View>
  </View>
  )
@@ -64,10 +70,10 @@ function Meio(){
  </View> 
  <View style={{width:'100%',height:'15%',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
  <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:150,height:50,justifyContent:'center',alignItems:'center'}}>
- <Text style={{color:'#ffff',fontSize:35}}>Desativar</Text>
+ <Text style={{color:'#ffff',fontSize:30}}>Desativar</Text>
  </TouchableOpacity>
  <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:150,height:50,justifyContent:'center',alignItems:'center'}}>
- <Text style={{color:'#ffff',fontSize:35}}>Salvar</Text>
+ <Text style={{color:'#ffff',fontSize:30}}>Salvar</Text>
  </TouchableOpacity>
  </View>
  </View>

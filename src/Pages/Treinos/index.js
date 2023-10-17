@@ -47,6 +47,7 @@ function Meio(){
  <View style={{width:'90%',flex:1,justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
  <View style={{backgroundColor:'#272727',width:'80%',height:'40%',borderRadius:10,paddingLeft:10}}>
  <Image source={require('../../../imagem/imgdotreino1.png')} style={{width:'30%', height:'100%'}}/>
+ {/* <Image source={require('../../../imagem/gifTreino.gif')} style={{width:'30%', height:'80%', borderRadius:10}}/> */}
  </View>
  </View>
  

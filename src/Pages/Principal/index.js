@@ -2,7 +2,8 @@ import { StatusBar ,} from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity,ScrollView, Pressable} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Feather from "@expo/vector-icons/Feather";
 
 export default function App() {
 
@@ -49,13 +50,23 @@ function Meio(){
     <View style={{width:'100%',flex:1,justifyContent:'space-evenly',alignItems:'center'}}>
       <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
       <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
-      <Image source={require('../../../imagem/imgPerfil.png')} style={{width:120, height:120,borderRadius:10}}/>
+      {/* <Image source={require('../../../imagem/imgPerfil.png')} style={{width:120, height:120,borderRadius:10}}/> */}
+      <FontAwesome
+        name= 'user'
+        size= {70}
+        color= '#FFF'
+      />
       <Text style={{fontSize:55,color:'white'}}>Perfil</Text>  
       </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Treinos')}>
       <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}} >
-      <Image source={require('../../../imagem/imgTreino.png')} style={{width:120, height:120,borderRadius:10}}/>
+      {/* <Image source={require('../../../imagem/imgTreino.png')} style={{width:120, height:120,borderRadius:10}}/> */}
+      <Feather
+        name= 'list'
+        size= {70}
+        color= '#FFF'
+        />
       <Text style={{fontSize:55,color:'white'}}>Treino</Text>  
       
       </View>
