@@ -11,38 +11,43 @@ const treinoMassa=[
         nomeExercício: 'Supino reto',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        tipoMusculo: 'Peitoral'
+        tipoMusculo: 'Peitoral',
+        imagem: './imagem/supinoReto.gif'
     },
     {
         nomeExercício: 'Leg Press',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
-        tipoMusculo: 'Quadríceps'
+        tipoMusculo: 'Quadríceps',
+        imagem: './imagem/legPress.gif'
     },
     {
         nomeExercício: 'Rosca bíceps direta com barra',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        tipoMusculo: 'Bíceps'
+        tipoMusculo: 'Bíceps',
+        imagem: './imagem/bicepsBarra.gif'
     },
     {
-        nomeExercício: 'Remada Curvada',
+        nomeExercício: 'Remada',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        tipoMusculo: 'Costas'
+        tipoMusculo: 'Costas',
+        imagem: './imagem/remadaHalter.gif'
     },
     {
         nomeExercício: 'Panturrilha livre',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
-        tipoMusculo: 'Panturrilha'
+        tipoMusculo: 'Panturrilha',
+        imagem: './imagem/panturrilhaLivre.gif'
     },
     {
-        nomeExercício: 'Extensão de halteres sob a cabeça',
+        nomeExercício: 'Tríceps Halter',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Tríceps',
-        imagem: ''
+        imagem: './imagem/tricepsHalter.gif'
     },
 ]
 
