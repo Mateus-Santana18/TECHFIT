@@ -6,8 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 
 import { Picker } from '@react-native-picker/picker';
-
+import { usuarios } from '../../../vetorUsuarios';
 export default function App() {
+  
   return (
 
     
@@ -114,10 +115,10 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20
   },
-  carros: {
-    fontSize: 25,
-    color: '#FFF',
-  }
+  // carros: {
+  //   fontSize: 25,
+  //   color: '#FFF',
+  // }
  
 });
 
@@ -139,15 +140,42 @@ const styles = StyleSheet.create({
     
   function Body(){
     const navigation = useNavigation();
-    const [biotipoSelecionado, setBiotipoSelecionado] = useState(0);
-    const [selecionarBiotipo, setSelecionarBiotipo] = useState([
-      {key: 1, nome: 'Perder Peso', },
-      {key: 2, nome: 'Manter Saúde'},
-      {key: 3, nome: 'Ganhar massa'},    
-    ])  
-    let biotipo = selecionarBiotipo.map( (v, k) => {
-      return <Picker.Item key={k} value={k} label={v.nome} style={customPickerStyles.pickerItem} />
-    })
+
+
+    const [nomeUsuario, setNomeUsuario] = useState()
+    const [emailUsuario, setEmailUsuario] = useState()
+    const [senhaUsuario, setSenhaUsuario] = useState()
+    const [alturaUsuario, setAlturaUsuario] = useState()
+    const [pesoUsuario, setPesoUsuario] = useState()
+    const [biotipoSelecionado, setBiotipoSelecionado] = useState();
+    // const [selectedLanguage, setSelectedLanguage] = useState();
+
+    // const [selecionarBiotipo, setSelecionarBiotipo] = useState([
+    //   {key: 1, nome: 'Perder Peso', },
+    //   {key: 2, nome: 'Manter Saúde'},
+    //   {key: 3, nome: 'Ganhar massa'},    
+    // ])  
+    // let biotipo = selecionarBiotipo.map( (v, k) => {
+    //   return <Picker.Item key={k} value={k} label={v.nome} style={customPickerStyles.pickerItem} />
+    // })
+    function cadastrar(){
+
+        const usuarioCadastrar = {
+          nome: nomeUsuario,
+          email: emailUsuario,
+          senha: senhaUsuario,
+          altura: alturaUsuario,
+          peso: pesoUsuario,
+          estiloTreino: biotipoSelecionado,
+        }
+        
+        usuarios.push(usuarioCadastrar),
+
+        console.log(usuarios);
+        navigation.navigate('Principal')
+      }
+    // function log(){}
+
     return(
   
       <View style={styles.body}>
@@ -159,14 +187,20 @@ const styles = StyleSheet.create({
 
         <View style={{width: '100%', height: '60%', justifyContent: 'center', alignItems: 'center'}}>
         <TextInput style={styles.inputCadastro}
+         value={nomeUsuario}
+         onChangeText={setNomeUsuario}
          placeholder="Nome" 
          placeholderTextColor="#FFFFFF"       
          />
         <TextInput style={styles.inputCadastro}
+         value={emailUsuario}
+         onChangeText={setEmailUsuario}
          placeholder="E-mail"      
          placeholderTextColor="#FFFFFF"  
          />
         <TextInput style={styles.inputCadastro}
+         value={senhaUsuario}
+         onChangeText={setSenhaUsuario}
          placeholder="Senha"     
          placeholderTextColor="#FFFFFF"   
          secureTextEntry={true}  
@@ -177,42 +211,59 @@ const styles = StyleSheet.create({
          secureTextEntry={true}   
          />       
         <TextInput style={styles.inputCadastro}
+         value={alturaUsuario}
+         onChangeText={setAlturaUsuario}
          placeholder="Altura"   
          placeholderTextColor="#FFFFFF" 
          maxLength={4}
          keyboardType='numeric'
          />       
         <TextInput style={styles.inputCadastro}
+         value={pesoUsuario}
+         onChangeText={setPesoUsuario}
          placeholder="Peso"   
          placeholderTextColor="#FFFFFF" 
          maxLength={4}
          keyboardType='numeric'
          />      
          <View style={customPickerStyles.pickerContainer}> 
-        <Picker
+        {/* <Picker
         dropdownIconColor = '#FFF'
         style={customPickerStyles.inputAndroid}
         selectedValue={biotipoSelecionado}
         onValueChange={ (itemValue, itemIndex) => setBiotipoSelecionado(itemValue) }
         >
         {biotipo}
-        </Picker>
+        </Picker> */}
+        <Picker
+         mode={'dropdown'}
+         dropdownIconColor = '#FFF'
+         style={customPickerStyles.inputAndroid}
+         selectedValue={biotipoSelecionado}
+         onValueChange={(itemValue, itemIndex) =>
+         setBiotipoSelecionado(itemValue)}>
+          
+    <Picker.Item style={customPickerStyles.pickerItens} label="" value="" />
+    <Picker.Item style={customPickerStyles.pickerItens} label="Ganhar Massa" value="GM" />
+    <Picker.Item style={customPickerStyles.pickerItens} label="Perder Peso" value="PP" />
+    <Picker.Item style={customPickerStyles.pickerItens} label="Manter Saúde" value="MS" />
+</Picker>
         </View>
 
          </View>
          <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
-         <Pressable style={styles.botao} onPress={() => navigation.navigate('Principal')} >
+         <Pressable style={styles.botao} onPress={cadastrar}>
          <Text style={styles.botaoTexto}>Cadastrar</Text>
          </Pressable>
          <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Login')}>Já tenho cadastro, fazer login</Text>
-
+        
       </View>
       </ScrollView>
       </View>
 
     )
-    
-  }
+  } 
+  
 
   const customPickerStyles = StyleSheet.create({
     pickerContainer: {
@@ -227,12 +278,16 @@ const styles = StyleSheet.create({
     },
     inputAndroid: {
       width: '100%',
-      color: 'white',
-      
+      color: '#FFF',
     },
-    pickerItem: {
+    // pickerItem: {
+    //   fontSize: 200,
+
+    // },
+    pickerItens: {
+      backgroundColor:'#000',
+      color: '#FFF',
       fontSize: 22,
-      
     },
 
   })

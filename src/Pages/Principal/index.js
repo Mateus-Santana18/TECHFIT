@@ -4,7 +4,7 @@ import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity,ScrollView, 
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Feather from "@expo/vector-icons/Feather";
-
+import { usuarios } from '../../../vetorUsuarios';
 export default function App() {
 
 

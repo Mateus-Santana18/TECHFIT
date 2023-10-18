@@ -1,12 +1,5 @@
-// const treino=[
-//     {
-//         nomeExercício: '',
-//         quantidadeRepeticoes: 0,
-//         qtdSeries: 0,
-//         tipoMusculo: ''
-//     }
-// ]
-const treinoMassa=[
+// PRIMEIRO TREINO PARA GANHAR MASSA
+export const treinoMassa=[
     {
         nomeExercício: 'Supino reto',
         quantidadeRepeticoes: 12,
@@ -26,7 +19,7 @@ const treinoMassa=[
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Bíceps',
-        imagem: './imagem/bicepsBarra.gif'
+        imagem: './imagem/bicepsBarra.webp'
     },
     {
         nomeExercício: 'Remada',
@@ -36,11 +29,11 @@ const treinoMassa=[
         imagem: './imagem/remadaHalter.gif'
     },
     {
-        nomeExercício: 'Panturrilha livre',
+        nomeExercício: 'Panturrilha Halteres',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
         tipoMusculo: 'Panturrilha',
-        imagem: './imagem/panturrilhaLivre.gif'
+        imagem: './imagem/panturrilhaHalter.webp'
     },
     {
         nomeExercício: 'Tríceps Halter',
@@ -48,6 +41,45 @@ const treinoMassa=[
         qtdSeries: 4,
         tipoMusculo: 'Tríceps',
         imagem: './imagem/tricepsHalter.gif'
+    },
+]
+
+// SEGUNDO TREINO PARA PERDER PESO
+export const treinoPerderPeso=[
+    {
+        nomeExercício: 'Bicicleta',
+        tempo: '20 Minutos',
+        imagem: './imagem/spinning.gif'
+    },
+    {
+        nomeExercício: 'Corda Naval',
+        quantidadeRepeticoes: 12,
+        qtdSeries: 4,
+        imagem: './imagem/cordaNaval.gif'
+    },
+    {
+        nomeExercício: 'Pular Corda',
+        quantidadeRepeticoes: 12,
+        qtdSeries: 4,
+        imagem: './imagem/pularCorda.webp'
+    },
+    {
+        nomeExercício: 'Abdominal',
+        quantidadeRepeticoes: 12,
+        qtdSeries: 4,
+        imagem: './imagem/abdominal.webp'
+    },
+    {
+        nomeExercício: 'Polichinelo',
+        quantidadeRepeticoes: 12,
+        qtdSeries: 4,
+        imagem: './imagem/polichinelo.webp'
+    },
+    {
+        nomeExercício: 'Esteira',
+        tempo: '15 Minutos',
+        tipoMusculo: 'Membros Inferiores',
+        imagem: './imagem/esteira.webp',
     },
 ]
 
