@@ -3,10 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
+import { useMeuContexto } from '../../../contexto';
 
 import { Picker } from '@react-native-picker/picker';
-import { usuarios } from '../../../vetorUsuarios';
+
+import { treinoMassa, treinoPerderPeso  } from '../../../vetorTreino';
+
 export default function App() {
   
   return (
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
     
   function Body(){
     const navigation = useNavigation();
-
+    const { usuarios } = useMeuContexto();
 
     const [nomeUsuario, setNomeUsuario] = useState()
     const [emailUsuario, setEmailUsuario] = useState()
@@ -158,6 +160,13 @@ const styles = StyleSheet.create({
     // let biotipo = selecionarBiotipo.map( (v, k) => {
     //   return <Picker.Item key={k} value={k} label={v.nome} style={customPickerStyles.pickerItem} />
     // })
+    function gerarTreino(tipo){
+      if(tipo == "GM"){
+        return [...treinoMassa]
+      }else if(tipo == "PP"){
+        return [...treinoPerderPeso]
+      }
+    }
     function cadastrar(){
 
         const usuarioCadastrar = {
@@ -167,14 +176,18 @@ const styles = StyleSheet.create({
           altura: alturaUsuario,
           peso: pesoUsuario,
           estiloTreino: biotipoSelecionado,
+          treinoSelecionado: gerarTreino(biotipoSelecionado)
         }
         
-        usuarios.push(usuarioCadastrar),
-
+        salvarUsuario(usuarioCadastrar)
+        
         console.log(usuarios);
         navigation.navigate('Principal')
+  
       }
-    // function log(){}
+    function salvarUsuario(usuario){ 
+        usuarios.push(usuario)
+    }
 
     return(
   
@@ -223,7 +236,7 @@ const styles = StyleSheet.create({
          onChangeText={setPesoUsuario}
          placeholder="Peso"   
          placeholderTextColor="#FFFFFF" 
-         maxLength={4}
+         maxLength={5}
          keyboardType='numeric'
          />      
          <View style={customPickerStyles.pickerContainer}> 

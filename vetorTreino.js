@@ -1,42 +1,42 @@
 // PRIMEIRO TREINO PARA GANHAR MASSA
 export const treinoMassa=[
     {
-        nomeExercício: 'Supino reto',
+        nomeExercicio: 'Supino reto',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Peitoral',
         imagem: './imagem/supinoReto.gif'
     },
     {
-        nomeExercício: 'Leg Press',
+        nomeExercicio: 'Leg Press',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
         tipoMusculo: 'Quadríceps',
         imagem: './imagem/legPress.gif'
     },
     {
-        nomeExercício: 'Rosca bíceps direta com barra',
+        nomeExercicio: 'Rosca bíceps direta com barra',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Bíceps',
         imagem: './imagem/bicepsBarra.webp'
     },
     {
-        nomeExercício: 'Remada',
+        nomeExercicio: 'Remada',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Costas',
         imagem: './imagem/remadaHalter.gif'
     },
     {
-        nomeExercício: 'Panturrilha Halteres',
+        nomeExercicio: 'Panturrilha Halteres',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
         tipoMusculo: 'Panturrilha',
         imagem: './imagem/panturrilhaHalter.webp'
     },
     {
-        nomeExercício: 'Tríceps Halter',
+        nomeExercicio: 'Tríceps Halter',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Tríceps',
@@ -47,40 +47,41 @@ export const treinoMassa=[
 // SEGUNDO TREINO PARA PERDER PESO
 export const treinoPerderPeso=[
     {
-        nomeExercício: 'Bicicleta',
-        tempo: '20 Minutos',
+        nomeExercicio: 'Bicicleta',
+        quantidadeRepeticoes: '20 Minutos',
+        qtdSeries: '',
         imagem: './imagem/spinning.gif'
     },
     {
-        nomeExercício: 'Corda Naval',
+        nomeExercicio: 'Corda Naval',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         imagem: './imagem/cordaNaval.gif'
     },
     {
-        nomeExercício: 'Pular Corda',
+        nomeExercicio: 'Pular Corda',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         imagem: './imagem/pularCorda.webp'
     },
     {
-        nomeExercício: 'Abdominal',
+        nomeExercicio: 'Abdominal',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         imagem: './imagem/abdominal.webp'
     },
     {
-        nomeExercício: 'Polichinelo',
+        nomeExercicio: 'Polichinelo',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         imagem: './imagem/polichinelo.webp'
     },
     {
-        nomeExercício: 'Esteira',
-        tempo: '15 Minutos',
-        tipoMusculo: 'Membros Inferiores',
+        nomeExercicio: 'Esteira',
+        quantidadeRepeticoes: '20 Minutos',
+        qtdSeries: '',
         imagem: './imagem/esteira.webp',
     },
 ]
 
-const vetorTreinoUsuarioForteQueQuerSaudeBoaSemUsarBombaIgualOIrmaoDoSantana = [...treino1]
+// const vetorTreinoUsuarioForteQueQuerSaudeBoaSemUsarBombaIgualOIrmaoDoSantana = [...treino1]

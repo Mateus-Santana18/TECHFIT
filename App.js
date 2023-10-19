@@ -11,14 +11,14 @@ import Cadastro from './src/Pages/Cadastro';
 import Principal from './src/Pages/Principal';
 import Perfil from './src/Pages/Perfil';
 import Treinos from './src/Pages/Treinos';
-
+import { MeuContextoProvider } from './contexto';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   
   return (
-
+    <MeuContextoProvider>
       <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Inicial" component={Inicial} options={{title: 'Página Inicial', headerStyle: {backgroundColor:'#000',}, headerTintColor:'#FFF', headerTitleAlign: 'center'}}/>
@@ -29,7 +29,7 @@ export default function App() {
         <Stack.Screen name="Treinos" component={Treinos} options={{title: 'Página Treinos', headerStyle: {backgroundColor:'#000',}, headerTintColor:'#FFF', headerTitleAlign: 'center'}}/>
       </Stack.Navigator>
     </NavigationContainer>
-
+    </MeuContextoProvider>
   );
 }
 
