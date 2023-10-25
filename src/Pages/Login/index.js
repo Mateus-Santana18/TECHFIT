@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { useMeuContexto } from '../../../contexto';
+import { useState } from 'react';
 
 export default function App() {
 
@@ -131,33 +132,70 @@ const styles = StyleSheet.create({
     
   function Body(){
     const navigation = useNavigation();
+    const { usuarios } = useMeuContexto();
+    const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
+
+    const [verificarEmail, setVerificarEmail] = useState()
+    const [verificarSenha, setVerificarSenha] = useState()
+
+    
+   
+    function autenticar(){
+      for(i = 0; i < usuarios.length; i++){
+        console.log(verificarEmail);
+        console.log(usuarios[i].email);
+        console.log(verificarSenha);
+        console.log(usuarios[i].senha);
+      if(verificarEmail == usuarios[i].email  && verificarSenha == usuarios[i].senha){
+          setUsuarioLogado ({
+            matricula: usuarios[i].matricula,
+            nome: usuarios[i].nome,
+            email: usuarios[i].email,
+            senha: usuarios[i].senha,
+            altura: usuarios[i].altura,
+            peso: usuarios[i].peso,
+            estiloTreino: usuarios[i].estiloTreino,
+            treinoSelecionado: usuarios[i].treinoSelecionado
+        }
+          )
+        
+        navigation.navigate('Principal')
+      }
+      }
+    }
+
+
     return(
   
       <View style={styles.body}>
       
         <View style={{width: '100%', height: '40%', justifyContent: 'center', alignItems: 'center'}}>
         <TextInput style={styles.inputCadastro}
-         placeholder="E-mail" 
-         placeholderTextColor="#FFFFFF"       
+          placeholder="E-mail" 
+          placeholderTextColor="#FFFFFF"     
+          value={verificarEmail}  
+          onChangeText={setVerificarEmail}
          />
         <TextInput style={styles.inputCadastro}
-         placeholder="Senha"      
-         placeholderTextColor="#FFFFFF"  
+          placeholder="Senha"      
+          placeholderTextColor="#FFFFFF"  
           autoCapitalize="none"
           secureTextEntry 
+          value={verificarSenha}  
+          onChangeText={setVerificarSenha}
          />
          <View style={{width: '100%', justifyContent: 'row', alignItems: 'flex-end', paddingRight: 35,}}>
          <Text style={{color: 'white', fontSize: 20,}}>Esqueceu a senha?</Text>
          </View>
          </View>
          <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
-         <Pressable style={styles.botao} onPress={() => navigation.navigate('Principal')}>
+         <Pressable style={styles.botao} onPress={autenticar}>
          <Text style={styles.botaoTexto}>Entrar</Text>
          </Pressable>
-         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Cadastro')}>Sou novo por aqui, quero cadastrar</Text>
+         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Cadastrar')}>Sou novo por aqui, quero cadastrar</Text>
 
       </View>
       </View>
 
     )
-  }
+    }

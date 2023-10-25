@@ -150,16 +150,13 @@ const styles = StyleSheet.create({
     const [alturaUsuario, setAlturaUsuario] = useState()
     const [pesoUsuario, setPesoUsuario] = useState()
     const [biotipoSelecionado, setBiotipoSelecionado] = useState();
-    // const [selectedLanguage, setSelectedLanguage] = useState();
 
-    // const [selecionarBiotipo, setSelecionarBiotipo] = useState([
-    //   {key: 1, nome: 'Perder Peso', },
-    //   {key: 2, nome: 'Manter Saúde'},
-    //   {key: 3, nome: 'Ganhar massa'},    
-    // ])  
-    // let biotipo = selecionarBiotipo.map( (v, k) => {
-    //   return <Picker.Item key={k} value={k} label={v.nome} style={customPickerStyles.pickerItem} />
-    // })
+
+    function gerarMatricula(){
+      
+      return '1' + Math.floor(Math.random() * (100 - 0) + 0)
+      
+    }
     function gerarTreino(tipo){
       if(tipo == "GM"){
         return [...treinoMassa]
@@ -170,6 +167,7 @@ const styles = StyleSheet.create({
     function cadastrar(){
 
         const usuarioCadastrar = {
+          matricula: gerarMatricula(),
           nome: nomeUsuario,
           email: emailUsuario,
           senha: senhaUsuario,
@@ -182,7 +180,7 @@ const styles = StyleSheet.create({
         salvarUsuario(usuarioCadastrar)
         
         console.log(usuarios);
-        navigation.navigate('Principal')
+        navigation.navigate('Login')
   
       }
     function salvarUsuario(usuario){ 

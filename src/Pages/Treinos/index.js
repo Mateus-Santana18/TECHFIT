@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity, ScrollView, Pressable,InnerText, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useMeuContexto } from '../../../contexto';
+import { treinoMassa } from '../../../vetorTreino';
+import { treinoPerderPeso } from '../../../vetorTreino';
 
 export default function App() {
 
@@ -41,13 +43,17 @@ function Cima(){
 
 }
 function Meio(){
-
+    const { usuarios } = useMeuContexto();
+    const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
  return(
  
+    <View>
+        <Text style={{color: '#FFF'}}>aaaaaaaaaa</Text>
+        {usuarioLogado.treinoSelecionado.map( (exercicio, index) => (
+            <Post texto={exercicio.nomeExercicio} imagem={exercicio.imagem} key={index}/>
+        ))}
 
-    <Post />
-
-
+    </View>  
 
 //     //  <View style={{width:'90%',flex:1,justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
 //  {/* <View style={{backgroundColor:'#272727',width:'80%',height:'40%',borderRadius:10,paddingLeft:10}}>
@@ -62,11 +68,14 @@ function Meio(){
 function Post(props){
     const { usuarios } = useMeuContexto();
     return(
+
         <View style={{width:'100%',height:'70%',justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
+            
         <View style={{backgroundColor:'#272727',width:350,height:150,borderRadius:10,paddingLeft:10, justifyContent: 'center',flexDirection: 'row'}}>
-        <Image source={require('../../../imagem/gifTreino.gif')} style={{width:'30%', height:'80%'}}/>
-        <Text style={{fontSize:80, color: '#FFF'}}></Text>
-        <Button title='clique aqui' onPress={() => console.log(usuarios[0].treinoSelecionado[0].nomeExercicio)}/>
+        <Text style={{color: '#FFF'}}>aaaaaaaaaa</Text>
+        <Image source={props.imagem} style={{width:'30%', height:'80%'}}/>
+        <Text style={{fontSize:80, color: '#FFF'}}>{props.texto}</Text>
+        {/* <Button title='clique aqui' onPress={() => console.log(usuarios[0].treinoSelecionado[0].nomeExercicio)}/> */}
         </View>
         </View>
       )

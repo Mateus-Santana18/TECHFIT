@@ -3,10 +3,13 @@ import React, { createContext, useContext, useState } from 'react';
 const MeuContexto = createContext();
 
 export function MeuContextoProvider({ children }) {
-  const usuarios = []
-
+  let usuarios = [{
+    
+  }]
+  // let usuarioLogado = {}
+  const [usuarioLogado, setUsuarioLogado] = useState()
   return (
-    <MeuContexto.Provider value={{ usuarios }}>
+    <MeuContexto.Provider value={{ usuarios, usuarioLogado, setUsuarioLogado }}>
       {children}
     </MeuContexto.Provider>
   );

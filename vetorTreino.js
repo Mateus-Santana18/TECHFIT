@@ -5,42 +5,42 @@ export const treinoMassa=[
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Peitoral',
-        imagem: './imagem/supinoReto.gif'
+        imagem: require('./imagem/supinoReto.gif')
     },
     {
         nomeExercicio: 'Leg Press',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
         tipoMusculo: 'Quadríceps',
-        imagem: './imagem/legPress.gif'
+        imagem: require('./imagem/legPress.gif')
     },
     {
         nomeExercicio: 'Rosca bíceps direta com barra',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Bíceps',
-        imagem: './imagem/bicepsBarra.webp'
+        imagem: require('./imagem/bicepsBarra.webp')
     },
     {
         nomeExercicio: 'Remada',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Costas',
-        imagem: './imagem/remadaHalter.gif'
+        imagem: require('./imagem/remadaHalter.gif')
     },
     {
         nomeExercicio: 'Panturrilha Halteres',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
         tipoMusculo: 'Panturrilha',
-        imagem: './imagem/panturrilhaHalter.webp'
+        imagem: require('./imagem/panturrilhaHalter.webp')
     },
     {
         nomeExercicio: 'Tríceps Halter',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Tríceps',
-        imagem: './imagem/tricepsHalter.gif'
+        imagem: require('./imagem/tricepsHalter.gif')
     },
 ]
 
@@ -50,37 +50,37 @@ export const treinoPerderPeso=[
         nomeExercicio: 'Bicicleta',
         quantidadeRepeticoes: '20 Minutos',
         qtdSeries: '',
-        imagem: './imagem/spinning.gif'
+        imagem: require('./imagem/spinning.gif')
     },
     {
         nomeExercicio: 'Corda Naval',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        imagem: './imagem/cordaNaval.gif'
+        imagem: require('./imagem/cordaNaval.gif')
     },
     {
         nomeExercicio: 'Pular Corda',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        imagem: './imagem/pularCorda.webp'
+        imagem: require('./imagem/pularCorda.webp')
     },
     {
         nomeExercicio: 'Abdominal',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        imagem: './imagem/abdominal.webp'
+        imagem: require('./imagem/abdominal.webp')
     },
     {
         nomeExercicio: 'Polichinelo',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
-        imagem: './imagem/polichinelo.webp'
+        imagem: require('./imagem/polichinelo.webp')
     },
     {
         nomeExercicio: 'Esteira',
         quantidadeRepeticoes: '20 Minutos',
         qtdSeries: '',
-        imagem: './imagem/esteira.webp',
+        imagem: require('./imagem/esteira.webp',)
     },
 ]
 

@@ -46,6 +46,8 @@ function Cima(){
 }
 function Meio(){
   const navigation = useNavigation();
+  // const { usuarios } = useMeuContexto();
+  // const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
   return(
     <View style={{width:'100%',flex:1,justifyContent:'space-evenly',alignItems:'center'}}>
       <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
