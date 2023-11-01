@@ -142,10 +142,10 @@ const styles = StyleSheet.create({
    
     function autenticar(){
       for(i = 0; i < usuarios.length; i++){
-        console.log(verificarEmail);
-        console.log(usuarios[i].email);
-        console.log(verificarSenha);
-        console.log(usuarios[i].senha);
+        // console.log(verificarEmail);
+        // console.log(usuarios[i].email);
+        // console.log(verificarSenha);
+        // console.log(usuarios[i].senha);
       if(verificarEmail == usuarios[i].email  && verificarSenha == usuarios[i].senha){
           setUsuarioLogado ({
             matricula: usuarios[i].matricula,
@@ -158,10 +158,14 @@ const styles = StyleSheet.create({
             treinoSelecionado: usuarios[i].treinoSelecionado
         }
           )
-        
+        setVerificarEmail('')
+        setVerificarSenha('')
         navigation.navigate('Principal')
+      }else{
+        navigation.navigate('Cadastro')
       }
       }
+      console.log(usuarioLogado);
     }
 
 
@@ -192,7 +196,7 @@ const styles = StyleSheet.create({
          <Pressable style={styles.botao} onPress={autenticar}>
          <Text style={styles.botaoTexto}>Entrar</Text>
          </Pressable>
-         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Cadastrar')}>Sou novo por aqui, quero cadastrar</Text>
+         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Cadastro')}>Sou novo por aqui, quero cadastrar</Text>
 
       </View>
       </View>

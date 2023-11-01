@@ -46,8 +46,8 @@ function Cima(){
 }
 function Meio(){
   const navigation = useNavigation();
-  // const { usuarios } = useMeuContexto();
-  // const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
+  const { usuarios } = useMeuContexto();
+  const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
   return(
     <View style={{width:'100%',flex:1,justifyContent:'space-evenly',alignItems:'center'}}>
       <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
@@ -59,9 +59,11 @@ function Meio(){
         color= '#FFF'
       />
       <Text style={{fontSize:55,color:'white'}}>Perfil</Text>  
+      <Text>{usuarioLogado.nome}</Text>
       </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Treinos')}>
+      {/* <TouchableOpacity onPress={() => console.log(usuarioLogado.treinoSelecionado)}> */}
       <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}} >
       {/* <Image source={require('../../../imagem/imgTreino.png')} style={{width:120, height:120,borderRadius:10}}/> */}
       <Feather

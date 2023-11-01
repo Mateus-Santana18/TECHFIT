@@ -1,6 +1,7 @@
 // PRIMEIRO TREINO PARA GANHAR MASSA
 export const treinoMassa=[
     {
+        id: '1',
         nomeExercicio: 'Supino reto',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
@@ -8,6 +9,7 @@ export const treinoMassa=[
         imagem: require('./imagem/supinoReto.gif')
     },
     {
+        id: '2',
         nomeExercicio: 'Leg Press',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
@@ -15,6 +17,7 @@ export const treinoMassa=[
         imagem: require('./imagem/legPress.gif')
     },
     {
+        id:'3',
         nomeExercicio: 'Rosca bíceps direta com barra',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
@@ -22,6 +25,7 @@ export const treinoMassa=[
         imagem: require('./imagem/bicepsBarra.webp')
     },
     {
+        id: '4',
         nomeExercicio: 'Remada',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
@@ -29,6 +33,7 @@ export const treinoMassa=[
         imagem: require('./imagem/remadaHalter.gif')
     },
     {
+        id: '5',
         nomeExercicio: 'Panturrilha Halteres',
         quantidadeRepeticoes: 10,
         qtdSeries: 4,
@@ -36,6 +41,7 @@ export const treinoMassa=[
         imagem: require('./imagem/panturrilhaHalter.webp')
     },
     {
+        id: '6',
         nomeExercicio: 'Tríceps Halter',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,

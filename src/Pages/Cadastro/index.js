@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
         
         salvarUsuario(usuarioCadastrar)
         
-        console.log(usuarios);
+        // console.log(usuarios);
         navigation.navigate('Login')
   
       }

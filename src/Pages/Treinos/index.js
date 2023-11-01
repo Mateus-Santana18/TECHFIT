@@ -1,6 +1,6 @@
 import { StatusBar ,} from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity, ScrollView, Pressable,InnerText, Button} from 'react-native';
+import { StyleSheet, Text, View ,Image, TextInput, TouchableOpacity, ScrollView, Pressable,InnerText, Button, FlatList} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useMeuContexto } from '../../../contexto';
 import { treinoMassa } from '../../../vetorTreino';
@@ -47,12 +47,17 @@ function Meio(){
     const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
  return(
  
-    <View>
-        <Text style={{color: '#FFF'}}>aaaaaaaaaa</Text>
-        {usuarioLogado.treinoSelecionado.map( (exercicio, index) => (
-            <Post texto={exercicio.nomeExercicio} imagem={exercicio.imagem} key={index}/>
-        ))}
-
+    <View style={{width:'100%',height:'100%'}}>
+ 
+        {/* {usuarioLogado.treinoSelecionado.map( (exercicio, index) => (
+            <Post texto={exercicio.nomeExercicio} imagem={exercicio.imagem} key={exercicio.id}/>
+        ))} */}
+        <FlatList    
+        data={usuarioLogado.treinoSelecionado}
+        renderItem={({item}) => <Post data={item} />}
+        keyExtractor={(item) => item.id}
+        />
+        {/* </ScrollView> */}
     </View>  
 
 //     //  <View style={{width:'90%',flex:1,justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
@@ -69,13 +74,12 @@ function Post(props){
     const { usuarios } = useMeuContexto();
     return(
 
-        <View style={{width:'100%',height:'70%',justifyContent:'space-evenly',alignItems:'center',borderRadius:10}}>
+        <View style={{width:'100%',height: 250,justifyContent:'center',alignItems:'center',borderRadius:10}}>
             
         <View style={{backgroundColor:'#272727',width:350,height:150,borderRadius:10,paddingLeft:10, justifyContent: 'center',flexDirection: 'row'}}>
-        <Text style={{color: '#FFF'}}>aaaaaaaaaa</Text>
-        <Image source={props.imagem} style={{width:'30%', height:'80%'}}/>
-        <Text style={{fontSize:80, color: '#FFF'}}>{props.texto}</Text>
-        {/* <Button title='clique aqui' onPress={() => console.log(usuarios[0].treinoSelecionado[0].nomeExercicio)}/> */}
+        <Image source={props.data.imagem} style={{width:'30%', height:'80%'}}/>
+        <Text style={{fontSize:20, color: '#FFF'}}>{props.data.nomeExercicio}</Text>
+
         </View>
         </View>
       )
