@@ -13,7 +13,7 @@ export default function App() {
  <View style={styles.container}>
  <Cima/>
  <Meio />
- <Baixo/>
+ {/* <Baixo/> */}
  <StatusBar style='auto'/>
  </View>
  )};
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
 });
 function Cima(){
  return(
- <View style={{width:'100%',height: '30%',backgroundColor:'black',alignItems:'center'}}>
- <View style={{flexDirection:'row',justifyContent:'center',backgroundColor:'black',width:'100%',height:'20%',alignItems:'center'}}>
+ <View style={{width:'100%',height: '10%',alignItems:'center'}}>
+ <View style={{flexDirection:'row',justifyContent:'center',width:'100%',height:'50%',alignItems:'center'}}>
  <Text style={{color:'#ffff',fontSize:35}}>TECH </Text>
  <Text style={{color:'#00bf63',fontSize:35}}>FIT</Text>
  </View>
- <View style={{flexDirection:'row',justifyContent:'center',backgroundColor:'black',width:'100%',height:'20%',alignItems:'center',}}>
+ <View style={{flexDirection:'row',justifyContent:'center',width:'100%',height:'50%',alignItems:'center',}}>
  <Text style={{color:'#00bf63',fontSize:35}}>TREINO</Text>
  </View>
  </View>
@@ -47,7 +47,7 @@ function Meio(){
     const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
  return(
  
-    <View style={{width:'100%',height:'100%'}}>
+    <View style={{width:'100%',height:'80%'}}>
  
         {/* {usuarioLogado.treinoSelecionado.map( (exercicio, index) => (
             <Post texto={exercicio.nomeExercicio} imagem={exercicio.imagem} key={exercicio.id}/>
@@ -74,9 +74,9 @@ function Post(props){
     const { usuarios } = useMeuContexto();
     return(
 
-        <View style={{width:'100%',height: 250,justifyContent:'center',alignItems:'center',borderRadius:10}}>
+        <View style={{width:'100%',height:200,justifyContent:'space-around',alignItems:'center',borderRadius:10}}>
             
-        <View style={{backgroundColor:'#272727',width:350,height:150,borderRadius:10,paddingLeft:10, justifyContent: 'center',flexDirection: 'row'}}>
+        <View style={{backgroundColor:'#272727',width:350,height:125,borderRadius:10,paddingLeft:10, justifyContent: 'center',flexDirection: 'row'}}>
         <Image source={props.data.imagem} style={{width:'30%', height:'80%'}}/>
         <Text style={{fontSize:20, color: '#FFF'}}>{props.data.nomeExercicio}</Text>
 
@@ -88,7 +88,7 @@ function Post(props){
 
 function Baixo(){
  return(
- <View style={{width:'100%',flex:0.5,backgroundColor:'black'}}>
+ <View style={{width:'100%',height:80,backgroundColor:'green'}}>
  
  </View>
  )
