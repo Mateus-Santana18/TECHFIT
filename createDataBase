@@ -1,0 +1,79 @@
+create table usuario (
+    id serial primary key,
+    nome varchar(50) not null,
+    email varchar(50) not null,
+    altura float4 not null,
+    peso float4 not null,
+    data_nascimento date not null
+);
+
+create table matricula(
+    id serial primary key,
+    usuario_id integer,
+    data_matricula date not null,
+    estilo_treino varchar(50) not null,
+    foreign key (usuario_id) references usuario(id)
+);
+
+create table exercicio(
+    id serial primary key,
+    nome varchar(50) not null,
+    imagem varchar(50) not null
+);
+
+create table treino(
+    id serial primary key,
+    nome text not null
+);
+
+create table treino_exercicio(
+    id serial primary key,
+    treino_id integer,
+    exercicio_id integer,
+    series integer,
+    repeticoes integer,
+    tempo text,
+    foreign key (treino_id) references treino(id),
+    foreign key (exercicio_id) references exercicio(id)
+);
+
+create table treino_matricula(
+    id serial primary key,
+    treino_id integer,
+    matricula_id integer,
+    foreign key (treino_id) references treino(id),
+    foreign key (matricula_id) references matricula(id)
+);
+
+
+-- Inserção de Valores =>
+
+insert into exercicio (nome, imagem) values
+('Supino Reto', './imagem/supinoReto.gif'),
+('Leg Press', './imagem/legPress.gif'),
+('Biceps Barra', './imagem/bicepsBarra.webp'),
+('Remada', './imagem/remadaHalter.gif'),
+('Panturrilha Halteres', './imagem/panturrilhaHalter.webp'),
+('Triceps Halter', './imagem/tricepsHalter.gif'),
+('Corda Naval', './imagem/cordaNaval.gif'),
+('Pular Corda', './imagem/pularCorda.webp'),
+('Abdominal','./imagem/abdominal.webp'),
+('Polichinelo', './imagem/polichinelo.webp'),
+('Esteira', './imagem/esteira.webp'),
+
+insert into treino (nome) values
+('Ganhar Massa'),
+('Perder Peso');
+
+insert into treino_exercicio (treino_id, exercicio_id, series, repeticoes, tempo) values
+(1,1,4,12,null),
+(1,2,4,10,null),
+(1,3,4,12,null),
+(1,4,4,12,null),
+(1,5,4,10,null),
+(1,6,4,12,null),
+(2,7,4,12,null),
+(2,8,4,12,null),
+(2,9,4,12,null),
+(2,10,4,12,null),
+(2,11,null,null,'20 Minutos');
