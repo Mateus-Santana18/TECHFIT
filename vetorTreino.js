@@ -18,7 +18,7 @@ export const treinoMassa=[
     },
     {
         id:'3',
-        nomeExercicio: 'Rosca bíceps direta com barra',
+        nomeExercicio: 'Bíceps barra',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
         tipoMusculo: 'Bíceps',
@@ -53,12 +53,6 @@ export const treinoMassa=[
 // SEGUNDO TREINO PARA PERDER PESO
 export const treinoPerderPeso=[
     {
-        nomeExercicio: 'Bicicleta',
-        quantidadeRepeticoes: '20 Minutos',
-        qtdSeries: '',
-        imagem: require('./imagem/spinning.gif')
-    },
-    {
         nomeExercicio: 'Corda Naval',
         quantidadeRepeticoes: 12,
         qtdSeries: 4,
@@ -84,10 +78,12 @@ export const treinoPerderPeso=[
     },
     {
         nomeExercicio: 'Esteira',
-        quantidadeRepeticoes: '20 Minutos',
-        qtdSeries: '',
-        imagem: require('./imagem/esteira.webp',)
+        tempo: '20 Minutos',
+        imagem: require('./imagem/esteira.webp')
     },
 ]
+
+
+
 
 // const vetorTreinoUsuarioForteQueQuerSaudeBoaSemUsarBombaIgualOIrmaoDoSantana = [...treino1]

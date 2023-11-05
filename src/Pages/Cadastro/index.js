@@ -7,7 +7,7 @@ import { useMeuContexto } from '../../../contexto';
 
 import { Picker } from '@react-native-picker/picker';
 
-import { treinoMassa, treinoPerderPeso  } from '../../../vetorTreino';
+import { treinoMassa, treinoPerderPeso } from '../../../vetorTreino';
 
 export default function App() {
   
@@ -257,7 +257,6 @@ const styles = StyleSheet.create({
     <Picker.Item style={customPickerStyles.pickerItens} label="" value="" />
     <Picker.Item style={customPickerStyles.pickerItens} label="Ganhar Massa" value="GM" />
     <Picker.Item style={customPickerStyles.pickerItens} label="Perder Peso" value="PP" />
-    <Picker.Item style={customPickerStyles.pickerItens} label="Manter Saúde" value="MS" />
 </Picker>
         </View>
 

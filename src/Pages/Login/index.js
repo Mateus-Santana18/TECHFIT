@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useMeuContexto } from '../../../contexto';
 import { useState } from 'react';
@@ -8,12 +8,12 @@ export default function App() {
 
   return (
 
-    
+
     <View style={styles.container} >
-        <Header />
-       
-        <Body />
-      
+      <Header />
+
+      <Body />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-     
+
   },
 
   body: {
@@ -49,19 +49,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   txtHeader: {
-    
+
     color: 'Black',
     fontSize: 36,
 
   },
   txtFit: {
-    
+
     color: '#32cd32',
     fontSize: 36,
 
   },
   txtTech: {
-    
+
     color: 'white',
     fontSize: 36,
 
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: 'white',
     borderColor: '#32cd32',
-    
+
   },
   botao: {
     backgroundColor: '#000000',
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     // margin: 10,
     marginTop: 15,
     borderRadius: 30,
-    alignItems: 'center', 
+    alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 3,
@@ -100,106 +100,105 @@ const styles = StyleSheet.create({
   },
 
   txtBody: {
- 
-    color:'white',
+
+    color: 'white',
     fontSize: 20,
 
   },
 
-  txtFooter:{
+  txtFooter: {
 
     color: 'black',
     fontSize: 20
   },
- 
+
 });
 
-  function Header(){
+function Header() {
 
-    return(
-    
-      <View style={styles.header}>
-        <Text style={styles.txtTech}>TECH</Text>
-        <Text style={styles.txtFit}>FIT</Text>
+  return (
 
-        
-      </View>
-      
+    <View style={styles.header}>
+      <Text style={styles.txtTech}>TECH</Text>
+      <Text style={styles.txtFit}>FIT</Text>
 
-)
-    }
 
-    
-  function Body(){
-    const navigation = useNavigation();
-    const { usuarios } = useMeuContexto();
-    const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
+    </View>
 
-    const [verificarEmail, setVerificarEmail] = useState()
-    const [verificarSenha, setVerificarSenha] = useState()
 
-    
-   
-    function autenticar(){
-      for(i = 0; i < usuarios.length; i++){
-        // console.log(verificarEmail);
-        // console.log(usuarios[i].email);
-        // console.log(verificarSenha);
-        // console.log(usuarios[i].senha);
-      if(verificarEmail == usuarios[i].email  && verificarSenha == usuarios[i].senha){
-          setUsuarioLogado ({
-            matricula: usuarios[i].matricula,
-            nome: usuarios[i].nome,
-            email: usuarios[i].email,
-            senha: usuarios[i].senha,
-            altura: usuarios[i].altura,
-            peso: usuarios[i].peso,
-            estiloTreino: usuarios[i].estiloTreino,
-            treinoSelecionado: usuarios[i].treinoSelecionado
+  )
+}
+
+
+function Body() {
+  const navigation = useNavigation();
+  const { usuarios } = useMeuContexto();
+  const { usuarioLogado, setUsuarioLogado } = useMeuContexto();
+
+  const [verificarEmail, setVerificarEmail] = useState()
+  const [verificarSenha, setVerificarSenha] = useState()
+
+
+
+  function autenticar() {
+    for (i = 0; i < usuarios.length; i++) {
+      // console.log(verificarEmail);
+      // console.log(usuarios[i].email);
+      // console.log(verificarSenha);
+      // console.log(usuarios[i].senha);
+      if (verificarEmail == usuarios[i].email && verificarSenha == usuarios[i].senha) {
+        setUsuarioLogado({
+          matricula: usuarios[i].matricula,
+          nome: usuarios[i].nome,
+          email: usuarios[i].email,
+          senha: usuarios[i].senha,
+          altura: usuarios[i].altura,
+          peso: usuarios[i].peso,
+          estiloTreino: usuarios[i].estiloTreino,
+          treinoSelecionado: usuarios[i].treinoSelecionado
         }
-          )
+        )
+        console.log(usuarios);
         setVerificarEmail('')
         setVerificarSenha('')
         navigation.navigate('Principal')
-      }else{
-        navigation.navigate('Cadastro')
       }
-      }
-      console.log(usuarioLogado);
     }
+    console.log(usuarioLogado);
+  }
 
 
-    return(
-  
-      <View style={styles.body}>
-      
-        <View style={{width: '100%', height: '40%', justifyContent: 'center', alignItems: 'center'}}>
+  return (
+
+    <View style={styles.body}>
+
+      <View style={{ width: '100%', height: '40%', justifyContent: 'center', alignItems: 'center' }}>
         <TextInput style={styles.inputCadastro}
-          placeholder="E-mail" 
-          placeholderTextColor="#FFFFFF"     
-          value={verificarEmail}  
+          placeholder="E-mail"
+          placeholderTextColor="#FFFFFF"
+          value={verificarEmail}
           onChangeText={setVerificarEmail}
-         />
+        />
         <TextInput style={styles.inputCadastro}
-          placeholder="Senha"      
-          placeholderTextColor="#FFFFFF"  
+          placeholder="Senha"
+          placeholderTextColor="#FFFFFF"
           autoCapitalize="none"
-          secureTextEntry 
-          value={verificarSenha}  
+          secureTextEntry
+          value={verificarSenha}
           onChangeText={setVerificarSenha}
-         />
-         <View style={{width: '100%', justifyContent: 'row', alignItems: 'flex-end', paddingRight: 35,}}>
-         <Text style={{color: 'white', fontSize: 20,}}>Esqueceu a senha?</Text>
-         </View>
-         </View>
-         <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
-         <Pressable style={styles.botao} onPress={autenticar}>
-         <Text style={styles.botaoTexto}>Entrar</Text>
-         </Pressable>
-         <Text style={{color: 'white', fontSize: 20, paddingTop: 20}} onPress={() => navigation.navigate('Cadastro')}>Sou novo por aqui, quero cadastrar</Text>
+        />
+        <View style={{ width: '100%', justifyContent: 'row', alignItems: 'flex-end', paddingRight: 35, }}>
+          <Text style={{ color: 'white', fontSize: 20, }}>Esqueceu a senha?</Text>
+        </View>
+      </View>
+      <View style={{ width: '100%', height: '20%', justifyContent: 'center', alignItems: 'center' }}>
+        <Pressable style={styles.botao} onPress={autenticar}>
+          <Text style={styles.botaoTexto}>Entrar</Text>
+        </Pressable>
+        <Text style={{ color: 'white', fontSize: 20, paddingTop: 20 }} onPress={() => navigation.navigate('Cadastro')}>Sou novo por aqui, quero cadastrar</Text>
 
       </View>
-      </View>
+    </View>
 
-    )
-    }
+  )
+}

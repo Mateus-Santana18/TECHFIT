@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { treinoMassa } from './vetorTreino';
+import { treinoMassa, treinoPerderPeso } from './vetorTreino';
 const MeuContexto = createContext();
 
 export function MeuContextoProvider({ children }) {
@@ -10,8 +10,8 @@ export function MeuContextoProvider({ children }) {
     senha: 123,
     altura: 123,
     peso: 1,
-    estiloTreino: 'GM',
-    treinoSelecionado: treinoMassa
+    estiloTreino: 'PP',
+    treinoSelecionado: treinoPerderPeso
   }
     
   ]
