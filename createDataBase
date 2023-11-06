@@ -1,4 +1,4 @@
-create table usuario (
+create table usuarios (
     id serial primary key,
     nome varchar(50) not null,
     email varchar(50) not null,
