@@ -22,11 +22,11 @@
     "react-native-screens": "~3.22.0",
     "react-native-web": "~0.19.6"
   },
-  "type": "module",
+ 
   
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "prisma": "^5.5.2"
+    "@babel/core": "^7.20.0"
+
   },
   "private": true
 }

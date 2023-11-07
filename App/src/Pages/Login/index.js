@@ -4,6 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 import { useMeuContexto } from '../../../contexto';
 import { useState } from 'react';
 
+// const  { StatusBar } = require ('expo-status-bar');
+// const  { StyleSheet, Text, View, TextInput, Pressable, ScrollView } = require ('react-native');
+// const  { useNavigation } = require ('@react-navigation/native');
+// const  { useMeuContexto } = require ('../../../contexto');
+// const  { useState } = require( 'react')
+
 export default function App() {
 
   return (
