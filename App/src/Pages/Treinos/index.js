@@ -80,14 +80,21 @@ function Post(props) {
 
         <View style={{ width: '100%', height: 200, justifyContent: 'space-around', alignItems: 'center', borderRadius: 10 }}>
 
-            <View style={{ backgroundColor: '#272727', width: 350, height: 125, borderRadius: 10, paddingLeft: 10, justifyContent: 'center', flexDirection: 'row' }}>
-                <Image source={props.data.imagem} style={{ width: '30%', height: '80%' }} />
-                <Text style={{ fontSize: 20, color: '#FFF' }}>{props.data.nomeExercicio}</Text>
-                {
+            <View style={{ backgroundColor: '#272727', width: 350, height: 125, borderRadius: 10, justifyContent: 'center',flexDirection:'row'  }}>
+                <View style={{width:120,height:125, }}>
+                <Image source={props.data.imagem} style={{ width: '100%', height: '100%',borderTopLeftRadius:10,borderBottomLeftRadius:10 ,overlayColor:'black'}} />
 
-                    props.data.tempo ? (<Text style={{ fontSize: 20, color: '#FFF' }}>{props.data.tempo}</Text>) :
-                        <Text style={{ fontSize: 20, color: '#FFF' }}>{props.data.quantidadeRepeticoes}</Text>
+                </View>
+                <View style={{width:230,height:125,justifyContent:'center',paddingLeft:15}}>
+                <Text style={{ fontSize: 35, color: '#00bf63' }}>{props.data.nomeExercicio}</Text>
+                <Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.qtdSeries}</Text>
+
+                {
+                    
+                    props.data.tempo ? (<Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.tempo}</Text>) :
+                    <Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.quantidadeRepeticoes}</Text>
                 }
+                </View>
             </View>
         </View>
     )
@@ -103,4 +110,3 @@ function Baixo() {
 
 
 }
-
