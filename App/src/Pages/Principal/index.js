@@ -59,7 +59,6 @@ function Meio(){
         color= '#FFF'
       />
       <Text style={{fontSize:55,color:'white'}}>Perfil</Text>  
-      <Text>{usuarioLogado.nome}</Text>
       </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Treinos')}>
