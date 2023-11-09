@@ -89,24 +89,27 @@ function Meio(){
     setCor('#404040')
   }
   function salvar(){
-    // if(usuarios[posicaoUsuario()].email == emailInput){
-    //   usuarios[posicaoUsuario()].nome = nomeInput
-    //   usuarios[posicaoUsuario()].altura = alturaInput
-    //   usuarios[posicaoUsuario()].peso = pesoInput  
-    //   setUsuarioLogado({
-    //     matricula: usuarios[i].matricula,
-    //     nome: usuarios[i].nome,
-    //     email: usuarios[i].email,
-    //     senha: usuarios[i].senha,
-    //     altura: usuarios[i].altura,
-    //     peso: usuarios[i].peso,
-    //     estiloTreino: usuarios[i].estiloTreino,
-    //     treinoSelecionado: usuarios[i].treinoSelecionado
-    //   }
-    //   )
-    // }
+    if(usuarios[posicaoUsuario()].email == emailInput){
+      usuarios[posicaoUsuario()].nome = nomeInput
+      usuarios[posicaoUsuario()].altura = alturaInput
+      usuarios[posicaoUsuario()].peso = pesoInput  
+      usuarios[posicaoUsuario().estiloTreino] = biotipoSelecionado
+      usuarios[posicaoUsuario().treinoSelecionado] = gerarTreino(biotipoSelecionado)
+      setUsuarioLogado({
+        matricula: usuarios[i].matricula,
+        nome: usuarios[i].nome,
+        email: usuarios[i].email,
+        senha: usuarios[i].senha,
+        altura: usuarios[i].altura,
+        peso: usuarios[i].peso,
+        estiloTreino: usuarios[i].estiloTreino,
+        treinoSelecionado: usuarios[i].treinoSelecionado
+      }
+      )
 
-   
+    }
+
+   console.log(usuarios);
     setBotaoEditar(false)
     setCor('#171717')
   }
@@ -208,7 +211,7 @@ const customPickerStyles = StyleSheet.create({
   pickerItens: {
     backgroundColor:'#000',
     color: '#FFF',
-    fontSize: 22,
+    fontSize: 25,
   },
 
 })
