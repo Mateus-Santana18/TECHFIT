@@ -2,7 +2,7 @@
 export const treinoMassa=[
     {
         id: '1',
-        nomeExercicio: 'Supino reto',
+        nomeExercicio: 'SUPINO RETO',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Peitoral',
@@ -10,7 +10,7 @@ export const treinoMassa=[
     },
     {
         id: '2',
-        nomeExercicio: 'Leg Press',
+        nomeExercicio: 'LEG PRESS',
         quantidadeRepeticoes: 'Repetições: 10x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Quadríceps',
@@ -18,7 +18,7 @@ export const treinoMassa=[
     },
     {
         id:'3',
-        nomeExercicio: 'Bíceps barra',
+        nomeExercicio: 'BÍCEPS BARRA',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Bíceps',
@@ -26,7 +26,7 @@ export const treinoMassa=[
     },
     {
         id: '4',
-        nomeExercicio: 'Remada',
+        nomeExercicio: 'REMADA',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Costas',
@@ -34,7 +34,7 @@ export const treinoMassa=[
     },
     {
         id: '5',
-        nomeExercicio: 'Panturrilha Halteres',
+        nomeExercicio: 'PANTURRILHA HALTERES',
         quantidadeRepeticoes: 'Repetições: 10x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Panturrilha',
@@ -42,7 +42,7 @@ export const treinoMassa=[
     },
     {
         id: '6',
-        nomeExercicio: 'Tríceps Halter',
+        nomeExercicio: 'TRÍCEPS HALTER',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         tipoMusculo: 'Tríceps',
@@ -53,31 +53,31 @@ export const treinoMassa=[
 // SEGUNDO TREINO PARA PERDER PESO
 export const treinoPerderPeso=[
     {
-        nomeExercicio: 'Corda Naval',
+        nomeExercicio: 'CORDA NAVAL',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         imagem: require('./imagem/cordaNaval.gif')
     },
     {
-        nomeExercicio: 'Pular Corda',
+        nomeExercicio: 'PULAR CORDA',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         imagem: require('./imagem/pularCorda.webp')
     },
     {
-        nomeExercicio: 'Abdominal',
+        nomeExercicio: 'ABDOMINAL',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         imagem: require('./imagem/abdominal.webp')
     },
     {
-        nomeExercicio: 'Polichinelo',
+        nomeExercicio: 'POLICHINELO',
         quantidadeRepeticoes: 'Repetições: 12x',
         qtdSeries: 'Séries: 4',
         imagem: require('./imagem/polichinelo.webp')
     },
     {
-        nomeExercicio: 'Esteira',
+        nomeExercicio: 'ESTEIRA',
         tempo: '20 Minutos',
         imagem: require('./imagem/esteira.webp')
     },
@@ -86,4 +86,3 @@ export const treinoPerderPeso=[
 
 
 
-// const vetorTreinoUsuarioForteQueQuerSaudeBoaSemUsarBombaIgualOIrmaoDoSantana = [...treino1]

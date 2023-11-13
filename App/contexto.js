@@ -3,7 +3,8 @@ import { treinoMassa, treinoPerderPeso } from './vetorTreino';
 const MeuContexto = createContext();
 
 export function MeuContextoProvider({ children }) {
-  let usuarios = [{
+  let usuarios = [
+    {
     matricula: 180,
     nome: 'mateus',
     email: 'A',
@@ -12,8 +13,7 @@ export function MeuContextoProvider({ children }) {
     peso: 1,
     estiloTreino: 'PP',
     treinoSelecionado: treinoPerderPeso
-  }
-    
+  } 
   ]
   // let usuarioLogado = {}
   const [usuarioLogado, setUsuarioLogado] = useState()

@@ -86,7 +86,7 @@ function Post(props) {
 
                 </View>
                 <View style={{width:230,height:125,justifyContent:'center',paddingLeft:15}}>
-                <Text style={{ fontSize: 35, color: '#00bf63' }}>{props.data.nomeExercicio}</Text>
+                <Text style={{ fontSize: 30, color: '#00bf63' }}>{props.data.nomeExercicio}</Text>
                 <Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.qtdSeries}</Text>
 
                 {

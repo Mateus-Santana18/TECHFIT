@@ -164,7 +164,7 @@ function Body() {
           treinoSelecionado: usuarios[i].treinoSelecionado
         }
         )
-        console.log(usuarios);
+        console.log("PAGINA LOGIN" + usuarios);
         setVerificarEmail('')
         setVerificarSenha('')
         navigation.navigate('Principal')
