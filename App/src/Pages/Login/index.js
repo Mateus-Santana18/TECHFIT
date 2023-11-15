@@ -153,24 +153,25 @@ function Body() {
       // console.log(verificarSenha);
       // console.log(usuarios[i].senha);
       if (verificarEmail == usuarios[i].email && verificarSenha == usuarios[i].senha) {
-        setUsuarioLogado({
-          matricula: usuarios[i].matricula,
-          nome: usuarios[i].nome,
-          email: usuarios[i].email,
-          senha: usuarios[i].senha,
-          altura: usuarios[i].altura,
-          peso: usuarios[i].peso,
-          estiloTreino: usuarios[i].estiloTreino,
-          treinoSelecionado: usuarios[i].treinoSelecionado
-        }
+          setUsuarioLogado({
+            matricula: usuarios[i].matricula,
+            nome: usuarios[i].nome,
+            email: usuarios[i].email,
+            senha: usuarios[i].senha,
+            altura: usuarios[i].altura,
+            peso: usuarios[i].peso,
+            estiloTreino: usuarios[i].estiloTreino,
+            treinoSelecionado: usuarios[i].treinoSelecionado
+          }
         )
-        console.log("PAGINA LOGIN" + usuarios);
+        
         setVerificarEmail('')
         setVerificarSenha('')
+        // console.log(usuarios);
         navigation.navigate('Principal')
       }
     }
-    console.log(usuarioLogado);
+    
   }
 
 

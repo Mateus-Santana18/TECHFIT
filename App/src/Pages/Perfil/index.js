@@ -52,16 +52,14 @@ function Cima(){
 }
 function Meio(){
 
-  const { usuarios } = useMeuContexto();
+  const { usuarios, setUsuarios } = useMeuContexto();
   const { usuarioLogado, setUsuarioLogado } = useMeuContexto();
   useEffect(() => {mostrarUsuario(usuarioLogado)}, []);
   const [botaoEditar, setBotaoEditar] = useState(false)
-  
   const [nomeInput, setNomeInput] = useState();
   const [alturaInput, setAlturaInput] = useState();
   const [pesoInput, setPesoInput] = useState();
   const [cor, setCor] = useState('#171717');
-  // const [cor, setCor] = useState('#171717')
   const [biotipoSelecionado, setBiotipoSelecionado] = useState();
 
   function gerarTreino(tipo){
@@ -90,22 +88,21 @@ function Meio(){
   function salvar(){
 
     const index = posicaoUsuario();
+    const newUsers = [...usuarios]
     
-      
-    
-    usuarios[index].nome = nomeInput
-    usuarios[index].altura = alturaInput
-    usuarios[index].peso = pesoInput
-    usuarios[index].estiloTreino = biotipoSelecionado
-    usuarios[index].treinoSelecionado = gerarTreino(biotipoSelecionado)
+    newUsers[index].nome = nomeInput
+    newUsers[index].altura = alturaInput
+    newUsers[index].peso = pesoInput
+    newUsers[index].estiloTreino = biotipoSelecionado
+    newUsers[index].treinoSelecionado = gerarTreino(biotipoSelecionado)
+
+    setUsuarios(newUsers)
     setUsuarioLogado(usuarios[index])
     setBotaoEditar(false)
     setCor('#171717')
 
     mostrarUsuario(usuarios[index])
-  
     console.log(usuarios[index]);
-
   }
   
   function mostrarUsuario(usuarioParam){
@@ -147,6 +144,7 @@ function Meio(){
     editable={botaoEditar}
     value={alturaInput}
     onChangeText={setAlturaInput}
+    maxLength={4}
     style={[stylePerfil.inptsPerfil, {backgroundColor: cor}]}/>
   </View> 
   <View style={stylePerfil.viewStyles}>
@@ -155,6 +153,7 @@ function Meio(){
     editable={botaoEditar}
     value={pesoInput}
     onChangeText={setPesoInput}
+    maxLength={4}
     style={[stylePerfil.inptsPerfil, {backgroundColor: cor}]}
   />
   </View>

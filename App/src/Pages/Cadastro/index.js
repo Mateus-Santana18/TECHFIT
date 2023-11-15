@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     
   function Body(){
     const navigation = useNavigation();
-    const { usuarios } = useMeuContexto();
+    const { usuarios, setUsuarios } = useMeuContexto();
 
     const [nomeUsuario, setNomeUsuario] = useState()
     const [emailUsuario, setEmailUsuario] = useState()
@@ -177,15 +177,15 @@ const styles = StyleSheet.create({
           treinoSelecionado: gerarTreino(biotipoSelecionado)
         }
         
-        salvarUsuario(usuarioCadastrar)
-        
+        // salvarUsuario(usuarioCadastrar)
+        setUsuarios(usuarios.concat(usuarioCadastrar))
         console.log(usuarios);
         navigation.navigate('Login')
   
       }
-    function salvarUsuario(usuario){ 
-        usuarios.push(usuario)
-    }
+    // function salvarUsuario(usuario){ 
+    //     usuarios.push(usuario)
+    // }
 
     return(
   

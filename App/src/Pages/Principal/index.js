@@ -48,9 +48,14 @@ function Meio(){
   const navigation = useNavigation();
   const { usuarios } = useMeuContexto();
   const { usuarioLogado, setUsuarioLogado} = useMeuContexto();
+
+  function telaPerfil(){
+    console.log(usuarios);
+    navigation.navigate('Perfil')
+  }
   return(
     <View style={{width:'100%',flex:1,justifyContent:'space-evenly',alignItems:'center'}}>
-      <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
+      <TouchableOpacity onPress={telaPerfil}>
       <View style={{width:'80%',height:150,backgroundColor:'#272727',borderRadius:10,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
       {/* <Image source={require('../../../imagem/imgPerfil.png')} style={{width:120, height:120,borderRadius:10}}/> */}
       <FontAwesome
