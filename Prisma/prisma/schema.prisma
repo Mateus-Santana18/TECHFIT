@@ -1,5 +1,3 @@
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,4 +5,56 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model exercicio {
+  id               Int                @id @default(autoincrement())
+  nome             String             @db.VarChar(50)
+  imagem           String             @db.VarChar(50)
+  treino_exercicio treino_exercicio[]
+}
+
+model matricula {
+  id               Int                @id @default(autoincrement())
+  usuario_id       Int?
+  data_matricula   DateTime           @db.Date
+  estilo_treino    String             @db.VarChar(50)
+  usuarios         usuarios?          @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  treino_matricula treino_matricula[]
+}
+
+model treino {
+  id               Int                @id @default(autoincrement())
+  nome             String
+  treino_exercicio treino_exercicio[]
+  treino_matricula treino_matricula[]
+}
+
+model treino_exercicio {
+  id           Int        @id @default(autoincrement())
+  treino_id    Int?
+  exercicio_id Int?
+  series       Int?
+  repeticoes   Int?
+  tempo        String?
+  exercicio    exercicio? @relation(fields: [exercicio_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  treino       treino?    @relation(fields: [treino_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model treino_matricula {
+  id           Int        @id @default(autoincrement())
+  treino_id    Int?
+  matricula_id Int?
+  matricula    matricula? @relation(fields: [matricula_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  treino       treino?    @relation(fields: [treino_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model usuarios {
+  id              Int         @id @default(autoincrement())
+  nome            String      @db.VarChar(50)
+  email           String      @db.VarChar(50)
+  altura          Float       @db.Real
+  peso            Float       @db.Real
+  data_nascimento DateTime    @db.Date
+  matricula       matricula[]
 }
