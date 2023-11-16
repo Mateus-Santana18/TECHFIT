@@ -179,23 +179,24 @@ function Body() {
 
     <View style={styles.body}>
 
-      <View style={{ width: '100%', height: '40%', justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ width: '100%', height: '55%', justifyContent: 'center', alignItems: 'center',}}>
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 265,}}>E-mail</Text>
         <TextInput style={styles.inputCadastro}
-          placeholder="E-mail"
+          placeholder="exemplo@exemplo.com"
           placeholderTextColor="#FFFFFF"
           value={verificarEmail}
           onChangeText={setVerificarEmail}
         />
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 265,}}>Senha</Text>
         <TextInput style={styles.inputCadastro}
-          placeholder="Senha"
+          placeholder="Digite sua senha"
           placeholderTextColor="#FFFFFF"
-          autoCapitalize="none"
           secureTextEntry
           value={verificarSenha}
           onChangeText={setVerificarSenha}
         />
-        <View style={{ width: '100%', justifyContent: 'row', alignItems: 'flex-end', paddingRight: 35, }}>
-          <Text style={{ color: 'white', fontSize: 20, }}>Esqueceu a senha?</Text>
+        <View style={{ width: '100%', justifyContent: 'row', alignItems: 'flex-end', paddingRight: 45, padding: 5,}}>
+          <Text style={{ color: 'white', fontSize: 20,}}>Esqueceu a senha?</Text>
         </View>
       </View>
       <View style={{ width: '100%', height: '20%', justifyContent: 'center', alignItems: 'center' }}>
