@@ -1,4 +1,3 @@
-
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Pressable, ScrollView  } from 'react-native';
 import { useState } from 'react';
@@ -191,53 +190,66 @@ const styles = StyleSheet.create({
   
       <View style={styles.body}>
         <ScrollView style={{width:'100%'}}>
-        <View style={{width: '100%',height: '20%' ,paddingLeft: 16, paddingBottom: 20,}}>
+        <View style={{width: '100%',height: '18%' ,paddingLeft: 16, paddingBottom: 20,}}>
            <Text style={{color: '#32cd32', fontSize: 28,}}>Bem Vindo,</Text>
            <Text style={{color: 'white', fontSize: 17, width: '75%',}}>Preencha as informações a seguir para iniciarmos o seu cadastro</Text>
         </View>
 
         <View style={{width: '100%', height: '60%', justifyContent: 'center', alignItems: 'center'}}>
+
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 255,}}>Nome</Text> 
         <TextInput style={styles.inputCadastro}
          value={nomeUsuario}
          onChangeText={setNomeUsuario}
-         placeholder="Nome" 
-         placeholderTextColor="#FFFFFF"       
+         placeholder="Digite seu Nome..." 
+         placeholderTextColor="#999999"  
          />
+
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 255,}}>E-mail</Text> 
         <TextInput style={styles.inputCadastro}
          value={emailUsuario}
          onChangeText={setEmailUsuario}
-         placeholder="E-mail"      
-         placeholderTextColor="#FFFFFF"  
+         placeholder="Digite seu E-mail..."      
+         placeholderTextColor="#999999"  
          />
+
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 255,}}>Senha</Text> 
         <TextInput style={styles.inputCadastro}
          value={senhaUsuario}
          onChangeText={setSenhaUsuario}
-         placeholder="Senha"     
-         placeholderTextColor="#FFFFFF"   
+         placeholder="Digite sua Senha..."     
+         placeholderTextColor="#999999"    
          secureTextEntry={true}  
          />
+
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 160,}}>Confirmar Senha</Text> 
         <TextInput style={styles.inputCadastro}
-         placeholder="Confirmar Senha"   
-         placeholderTextColor="#FFFFFF" 
+         placeholder="Confirme Senha..."   
+         placeholderTextColor="#999999"  
          secureTextEntry={true}   
-         />       
+         />    
+
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 255,}}>Altura</Text> 
         <TextInput style={styles.inputCadastro}
          value={alturaUsuario}
          onChangeText={setAlturaUsuario}
-         placeholder="Altura"   
-         placeholderTextColor="#FFFFFF" 
+         placeholder="Digite sua Altura..."   
+         placeholderTextColor="#999999"  
          maxLength={4}
          keyboardType='numeric'
          />       
+        <Text  style={{color: 'white', fontSize: 25, paddingRight: 260,}}>Peso</Text> 
         <TextInput style={styles.inputCadastro}
          value={pesoUsuario}
          onChangeText={setPesoUsuario}
-         placeholder="Peso"   
-         placeholderTextColor="#FFFFFF" 
+         placeholder="Digite seu Peso..."   
+         placeholderTextColor="#999999"  
          maxLength={5}
          keyboardType='numeric'
          />      
+         <Text  style={{color: 'white', fontSize: 25, paddingRight: 250, marginBottom: 8,}}>Treinos</Text> 
          <View style={customPickerStyles.pickerContainer}> 
+         
         {/* <Picker
         dropdownIconColor = '#FFF'
         style={customPickerStyles.inputAndroid}
@@ -261,7 +273,7 @@ const styles = StyleSheet.create({
         </View>
 
          </View>
-         <View style={{width: '100%', height: '20%', justifyContent: 'center', alignItems:'center'}}>         
+         <View style={{width: '100%', height: '22%', justifyContent: 'center', alignItems:'center'}}>         
          <Pressable style={styles.botao} onPress={cadastrar}>
          <Text style={styles.botaoTexto}>Cadastrar</Text>
          </Pressable>
@@ -285,6 +297,7 @@ const styles = StyleSheet.create({
       borderColor: '#32cd32',
       borderRadius: 10,
       overflow: 'hidden',
+      
     },
     inputAndroid: {
       width: '100%',
@@ -301,4 +314,3 @@ const styles = StyleSheet.create({
     },
 
   })
-
