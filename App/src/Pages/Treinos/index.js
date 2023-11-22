@@ -89,8 +89,7 @@ function Post(props) {
                 <Text style={{ fontSize: 30, color: '#00bf63' }}>{props.data.nomeExercicio}</Text>
                 <Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.qtdSeries}</Text>
 
-                {
-                    
+                {                   
                     props.data.tempo ? (<Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.tempo}</Text>) :
                     <Text style={{ fontSize: 30, color: '#FFF' }}>{props.data.quantidadeRepeticoes}</Text>
                 }
