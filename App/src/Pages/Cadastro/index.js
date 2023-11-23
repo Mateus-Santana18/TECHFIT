@@ -8,6 +8,8 @@ import { Picker } from '@react-native-picker/picker';
 
 import { treinoMassa, treinoPerderPeso } from '../../../vetorTreino';
 
+import { Axios } from 'axios';
+
 export default function App() {
   
   return (

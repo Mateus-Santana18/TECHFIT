@@ -6,7 +6,11 @@ const usersRoutes = Router()
 const usersController = new UsersController()
 
 // Rotas
-usersRoutes.post('/create', usersController.create)
+usersRoutes.post('/create', usersController.cadastro)
+
+usersRoutes.get('/users', (req, res) =>{
+    console.log("Aaaaaaaaaa");
+})
 
 // Exporta
 module.exports = usersRoutes
