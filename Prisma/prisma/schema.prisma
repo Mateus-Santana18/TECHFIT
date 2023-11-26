@@ -15,5 +15,6 @@ model usuarios {
   estilo_treino String @db.VarChar(2)
   altura Float  @db.Real
   peso   Float  @db.Real
+  
   @@map("usuarios")
 }
