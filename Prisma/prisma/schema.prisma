@@ -9,8 +9,9 @@ datasource db {
 
 model usuarios {
   id     Int    @id @default(autoincrement())
+  senha  String @db.VarChar(50)
   nome   String @db.VarChar(50)
-  email  String @db.VarChar(50)
+  email  String @db.VarChar(50) @unique
   altura Float  @db.Real
   peso   Float  @db.Real
   @@map("usuarios")
