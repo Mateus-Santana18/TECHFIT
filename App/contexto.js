@@ -1,3 +1,7 @@
+// Página de contexto para armazenar os dados do usuário logado 
+// e os dados dos usuários cadastrados em um vetor global
+
+
 import React, { createContext, useContext, useState } from 'react';
 import { treinoMassa, treinoPerderPeso } from './vetorTreino';
 const MeuContexto = createContext();

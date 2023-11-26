@@ -1,3 +1,7 @@
+// Página usada para gerar treinos a partir de um vetor 
+// de treinos sendo de ganhar massa ou perder peso
+
+
 // PRIMEIRO TREINO PARA GANHAR MASSA
 export const treinoMassa=[
     {
