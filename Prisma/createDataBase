@@ -1,10 +1,11 @@
 create table usuarios (
     id serial primary key,
     nome varchar(50) not null,
+    senha varchar(50) not null,
     email varchar(50) not null,
     altura float4 not null,
     peso float4 not null,
-    data_nascimento date not null
+    estiloTreino varchar(2) not null,
 );
 
 create table matricula(

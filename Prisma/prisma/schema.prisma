@@ -12,6 +12,7 @@ model usuarios {
   senha  String @db.VarChar(50)
   nome   String @db.VarChar(50)
   email  String @db.VarChar(50) @unique
+  estilo_treino String @db.VarChar(2)
   altura Float  @db.Real
   peso   Float  @db.Real
   @@map("usuarios")

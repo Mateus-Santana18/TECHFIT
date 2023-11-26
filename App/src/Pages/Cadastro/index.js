@@ -7,19 +7,14 @@ import { useMeuContexto } from '../../../contexto';
 import { Picker } from '@react-native-picker/picker';
 
 import { treinoMassa, treinoPerderPeso } from '../../../vetorTreino';
-
-import { Axios } from 'axios';
+import api from '../../services/api';
 
 export default function App() {
   
   return (
-
-    
     <View style={styles.container} >
         <Header />
-       
         <Body />
-      
       <StatusBar style="auto" />
     </View>
   );
@@ -33,7 +28,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-
   header: {
     backgroundColor: 'black',
     height: 65,
@@ -42,12 +36,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-     
   },
 
   body: {
     backgroundColor: 'black',
-
     flex: 9,
     width: '100%',
     alignItems: 'center',
@@ -55,16 +47,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   txtHeader: {
-    
     color: 'Black',
     fontSize: 36,
-
   },
   txtFit: {
-    
     color: '#32cd32',
     fontSize: 36,
-
   },
   txtTech: {
     
@@ -89,9 +77,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     width: '50%',
     height: 50,
-    // padding: 10,
-    // paddingRight: ,
-    // margin: 10,
     marginTop: 50,
     borderRadius: 30,
     alignItems: 'center', 
@@ -103,40 +88,26 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    
   },
 
   txtBody: {
- 
     color:'white',
     fontSize: 20,
-
   },
 
   txtFooter:{
-
     color: 'black',
     fontSize: 20
   },
-  // carros: {
-  //   fontSize: 25,
-  //   color: '#FFF',
-  // }
- 
 });
 
   function Header(){
 
     return(
-    
       <View style={styles.header}>
         <Text style={styles.txtTech}>TECH</Text>
         <Text style={styles.txtFit}>FIT</Text>
-
-        
       </View>
-      
-
 )
     }
 
@@ -180,13 +151,21 @@ const styles = StyleSheet.create({
         
         // salvarUsuario(usuarioCadastrar)
         setUsuarios(usuarios.concat(usuarioCadastrar))
-        console.log(usuarios);
-        navigation.navigate('Login')
-  
+        api.post('users', {
+          nome: nomeUsuario,
+          email: emailUsuario,
+          senha: senhaUsuario,
+          altura: alturaUsuario,
+          peso: pesoUsuario,
+          estiloTreino: biotipoSelecionado,
+        }).then(() => {
+          navigation.navigate('Login')
+        }).catch((error) => {
+          navigation.navigate('Login')
+        })
+
+        console.log('Usuario cadastrado com sucesso');
       }
-    // function salvarUsuario(usuario){ 
-    //     usuarios.push(usuario)
-    // }
 
     return(
   
@@ -242,24 +221,15 @@ const styles = StyleSheet.create({
          />       
         <Text  style={{color: 'white', fontSize: 25, paddingRight: 260,}}>Peso</Text> 
         <TextInput style={styles.inputCadastro}
-         value={pesoUsuario}
-         onChangeText={setPesoUsuario}
-         placeholder="Digite seu Peso..."   
-         placeholderTextColor="#999999"  
-         maxLength={5}
-         keyboardType='numeric'
+          value={pesoUsuario}
+          onChangeText={setPesoUsuario}
+          placeholder="Digite seu Peso..."   
+          placeholderTextColor="#999999"  
+          maxLength={5}
+          keyboardType='numeric'
          />      
          <Text  style={{color: 'white', fontSize: 25, paddingRight: 250, marginBottom: 8,}}>Treinos</Text> 
          <View style={customPickerStyles.pickerContainer}> 
-         
-        {/* <Picker
-        dropdownIconColor = '#FFF'
-        style={customPickerStyles.inputAndroid}
-        selectedValue={biotipoSelecionado}
-        onValueChange={ (itemValue, itemIndex) => setBiotipoSelecionado(itemValue) }
-        >
-        {biotipo}
-        </Picker> */}
         <Picker
          mode={'dropdown'}
          dropdownIconColor = '#FFF'

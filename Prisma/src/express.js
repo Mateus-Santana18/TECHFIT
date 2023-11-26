@@ -41,13 +41,15 @@ app.post('/users', async (req, res) => {
                 nome: user.nome,
                 senha: user.senha,
                 email: user.email,
-                altura: user.altura,
-                peso: user.peso,
+                altura: parseFloat(user.altura),
+                peso: parseFloat(user.peso),
+                estilo_treino: user.estiloTreino,
             },
         });
     
         res.status(201).json(result);
     } catch (error) {
+        console.log(error.message);
         res.status(500).send(error?.message);
     }
 });
@@ -66,6 +68,7 @@ app.put('/users/:id', async (req, res) => {
                 senha: user.senha,
                 altura: user.altura,
                 peso: user.peso,
+                estiloTreino: user.estiloTreino,
             },
         });
 

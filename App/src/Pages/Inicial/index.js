@@ -36,7 +36,6 @@ return(
     <View style={{flexDirection:'row',justifyContent:'center'}}>
       <Text style={{color:'white',fontSize:25,borderRadius:3,borderColor:'green',borderWidth:1,paddingLeft:0}}> Brasil </Text>
     </View>
-
   </View>
 );
 }
@@ -55,14 +54,14 @@ function Baixo(){
 return(
   <View style={{width:'100%',height:125,backgroundColor:'black'}}>
     <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'black',gap:6}}>
-    <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
-      <Text style={{color:'white',fontSize:20}}>ENTRAR</Text></TouchableOpacity>
-   <TouchableOpacity/>
-    <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
-      <Text style={{color:'white',fontSize:18}}>CADASTRAR</Text></TouchableOpacity>
-   <TouchableOpacity/>
-  
-
+      <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
+          <Text style={{color:'white',fontSize:20}}>ENTRAR</Text>
+      </TouchableOpacity>
+      <TouchableOpacity/>
+        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} style={{backgroundColor:'black',width:120,height:40,borderRadius:20,borderWidth:3,justifyContent:'center',alignItems:'center',color:'white',borderColor:'white'}} >
+          <Text style={{color:'white',fontSize:18}}>CADASTRAR</Text>
+        </TouchableOpacity>
+      <TouchableOpacity/>
     </View>
   </View>
 );
