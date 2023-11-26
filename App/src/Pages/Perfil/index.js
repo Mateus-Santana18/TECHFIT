@@ -7,6 +7,7 @@ import Feather from "@expo/vector-icons/Feather";
 import { Picker } from '@react-native-picker/picker';
 import { treinoMassa, treinoPerderPeso } from '../../../vetorTreino';
 import { useMeuContexto } from '../../../contexto';
+import api from '../../services/api';
 
 
 
@@ -53,6 +54,7 @@ function Cima(){
 function Meio(){
 
   const { usuarios, setUsuarios } = useMeuContexto();
+  const navigation = useNavigation();
   const { usuarioLogado, setUsuarioLogado } = useMeuContexto();
   useEffect(() => {mostrarUsuario(usuarioLogado)}, []);
   const [botaoEditar, setBotaoEditar] = useState(false)
@@ -88,21 +90,34 @@ function Meio(){
   function salvar(){
 
     const index = posicaoUsuario();
-    const newUsers = [...usuarios]
-    
-    newUsers[index].nome = nomeInput
-    newUsers[index].altura = alturaInput
-    newUsers[index].peso = pesoInput
-    newUsers[index].estiloTreino = biotipoSelecionado
-    newUsers[index].treinoSelecionado = gerarTreino(biotipoSelecionado)
+    const usuarioLogadoDupli = {
+      ...usuarioLogado
+    };
 
-    setUsuarios(newUsers)
-    setUsuarioLogado(usuarios[index])
+    usuarioLogadoDupli.nome = nomeInput;
+    usuarioLogadoDupli.altura = parseFloat(alturaInput);
+    usuarioLogadoDupli.peso = parseFloat(pesoInput);
+    usuarioLogadoDupli.estiloTreino = biotipoSelecionado;
+    usuarioLogadoDupli.treinoSelecionado = gerarTreino(biotipoSelecionado);
+
+    setUsuarioLogado(usuarioLogadoDupli);
+
+    api.put(`users/${usuarioLogado.id}`, {
+      nome: usuarioLogadoDupli.nome,
+      altura: usuarioLogadoDupli.altura,
+      peso: usuarioLogadoDupli.peso,
+      estiloTreino: usuarioLogadoDupli.estiloTreino,
+    }).then((response) => {
+      console.log('PUT: ', response.data);
+    }).catch((error) => {
+      console.log(error);
+    });
+
     setBotaoEditar(false)
     setCor('#171717')
 
-    mostrarUsuario(usuarios[index])
-    console.log(usuarios[index]);
+    mostrarUsuario(usuarioLogadoDupli)
+    console.log(usuarioLogadoDupli);
   }
   
   function mostrarUsuario(usuarioParam){
@@ -111,6 +126,18 @@ function Meio(){
     setAlturaInput(usuarioParam.altura.toString())
     setPesoInput(usuarioParam.peso.toString())
     setBiotipoSelecionado(usuarioParam.estiloTreino)
+  }
+
+  function desativar() {
+    const usuarioId = usuarioLogado.id;
+
+    api.delete(`users/${usuarioId}`).then((response) => {
+      setUsuarioLogado(null);
+      navigation.navigate('Inicial');
+    }
+    ).catch((error) => {
+      console.log(error);
+    });
   }
   
  return(
@@ -177,7 +204,7 @@ function Meio(){
   
   <View style={{width:'100%',height:'15%',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
   <TouchableOpacity style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:125,height:50,justifyContent:'center',alignItems:'center'}}>
-  <Text style={{color:'#ffff',fontSize:30}}>Desativar</Text>
+  <Text style={{color:'#ffff',fontSize:30}} onPress={desativar}>Desativar</Text>
   </TouchableOpacity>
   <TouchableOpacity 
     style={{borderWidth:1,borderColor:'#ffff',borderRadius:25,width:125,height:50,justifyContent:'center',alignItems:'center'}}

@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/login', async (req, res) => {    
+app.post('/login', async (req, res) => {    
     try {
         const { email, senha } = req.body;
 
@@ -21,14 +21,16 @@ app.get('/login', async (req, res) => {
         });
 
         if (!result) {
-            res.status(404).json({ message: 'Usuário não encontrado' });
+            res.status(404).json({ message: 'Usuário não encontrado' }).end();
             return;
         }
 
-        res.status(200)
+        result.estiloTreino = result.estilo_treino;
+
+        res.status(200).json(result).end();
     
     } catch (error) {
-        res.status(500).send(error?.message);
+        res.status(500).send(error?.message).end();
     }
 });
 
@@ -68,13 +70,14 @@ app.put('/users/:id', async (req, res) => {
                 senha: user.senha,
                 altura: user.altura,
                 peso: user.peso,
-                estiloTreino: user.estiloTreino,
+                estilo_treino: user.estiloTreino,
             },
         });
 
-        res.status(200).json(result);
+        res.status(200).json(result).end();
     } catch (error) {
-        res.status(500).send(error?.message);
+        console.log(error.message);
+        res.status(500).send(error?.message).end();
     }
 });
 
@@ -88,9 +91,9 @@ app.delete('/users/:id', async (req, res) => {
             },
         });
 
-        res.status(204).send();
+        res.status(204).send().end();
     } catch (error) {
-        res.status(500).send(error?.message);
+        res.status(500).send(error?.message).end();
     }
 });
 

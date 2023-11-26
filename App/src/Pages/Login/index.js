@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, Pressable, ScrollView } from 'react-
 import { useNavigation } from '@react-navigation/native';
 import { useMeuContexto } from '../../../contexto';
 import { useState } from 'react';
+import api from '../../services/api';
 
 // const  { StatusBar } = require ('expo-status-bar');
 // const  { StyleSheet, Text, View, TextInput, Pressable, ScrollView } = require ('react-native');
@@ -17,9 +18,7 @@ export default function App() {
 
     <View style={styles.container} >
       <Header />
-
       <Body />
-
       <StatusBar style="auto" />
     </View>
   );
@@ -127,51 +126,29 @@ function Header() {
     <View style={styles.header}>
       <Text style={styles.txtTech}>TECH</Text>
       <Text style={styles.txtFit}>FIT</Text>
-
-
     </View>
-
-
   )
 }
 
 
 function Body() {
   const navigation = useNavigation();
-  const { usuarios } = useMeuContexto();
   const { usuarioLogado, setUsuarioLogado } = useMeuContexto();
 
   const [verificarEmail, setVerificarEmail] = useState()
   const [verificarSenha, setVerificarSenha] = useState()
 
-
-
   function autenticar() {
-    for (i = 0; i < usuarios.length; i++) {
-      // console.log(verificarEmail);
-      // console.log(usuarios[i].email);
-      // console.log(verificarSenha);
-      // console.log(usuarios[i].senha);
-      if (verificarEmail == usuarios[i].email && verificarSenha == usuarios[i].senha) {
-          setUsuarioLogado({
-            matricula: usuarios[i].matricula,
-            nome: usuarios[i].nome,
-            email: usuarios[i].email,
-            senha: usuarios[i].senha,
-            altura: usuarios[i].altura,
-            peso: usuarios[i].peso,
-            estiloTreino: usuarios[i].estiloTreino,
-            treinoSelecionado: usuarios[i].treinoSelecionado
-          }
-        )
-        
-        setVerificarEmail('')
-        setVerificarSenha('')
-        // console.log(usuarios);
-        navigation.navigate('Principal')
-      }
-    }
-    
+    api.post('/login', {
+      email: verificarEmail,
+      senha: verificarSenha,
+    }).then((response) => {
+        console.log('LOGIN: ', response.data);
+        setUsuarioLogado(response.data);
+        navigation.navigate('Principal');
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
 
