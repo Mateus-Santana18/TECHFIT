@@ -4,7 +4,7 @@ Este projeto foi cuidadosamente criado como parte do sistema final do segundo se
 
 ### 🛠️ Tecnologias Utilizadas
 
-[![React Native](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png)](https://reactnative.dev/)
+[![React Native](https://shields.io/badge/react-black?logo=react&style=for-the-badge)](https://reactnative.dev/)
 [![Node](https://img.shields.io/badge/Node-20.12.2-green?logo=node)](https://nodejs.org/)
 [![NPM](https://img.shields.io/badge/NPM-10.4.9-red?logo=npm)](https://www.npmjs.com/)
 [![PostgreSQL](https://miro.medium.com/v2/resize:fit:610/1*mMq3Bem9r8ASAn1YwcTbEw.png)](https://www.postgresql.org/docs/)
