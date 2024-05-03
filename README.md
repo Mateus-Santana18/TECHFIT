@@ -4,10 +4,10 @@ Este projeto foi cuidadosamente criado como parte do sistema final do segundo se
 
 ### 🛠️ Tecnologias Utilizadas
 
-[![React Native](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FReact_Native&psig=AOvVaw07P_uOt6e0z2Jm6pnLcWkq&ust=1714793287990000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDf1M7E8IUDFQAAAAAdAAAAABAE)](https://reactnative.dev/)
+[![React Native](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png)](https://reactnative.dev/)
 [![Node](https://img.shields.io/badge/Node-20.12.2-green?logo=node)](https://nodejs.org/)
 [![NPM](https://img.shields.io/badge/NPM-10.4.9-red?logo=npm)](https://www.npmjs.com/)
-[![PostgreSQL](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40jujulisan%2Fcomandos-b%25C3%25A1sicos-do-postgresql-55559f1e4f69&psig=AOvVaw2EpGYRu89CJ2BMQ0znMe8W&ust=1714793306280000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJCXndfE8IUDFQAAAAAdAAAAABAR)](https://www.postgresql.org/docs/)
+[![PostgreSQL](https://miro.medium.com/v2/resize:fit:610/1*mMq3Bem9r8ASAn1YwcTbEw.png)](https://www.postgresql.org/docs/)
 
 
 ## 🏗️ Estrutura da Aplicação
