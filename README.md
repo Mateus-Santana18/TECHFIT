@@ -1,4 +1,4 @@
-# Blog de estudos - Criando um portfólio atrativo
+# Projeto TECHFIT - Aplicativo mobile para treinos de academia
 
 Este projeto foi cuidadosamente criado como parte do sistema final do segundo semestre do curso Senai, 
 
